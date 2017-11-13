@@ -1,0 +1,19 @@
+<TaskFinished>:
+    opacity: 0
+    on_parent: Animation(opacity=1, duration=.5, t="in_out_cubic").start(self)
+
+<BaseTask>:
+    size_hint: 1, 1
+    main_area: main_area
+    status_bar: status_bar
+    hide_animation: Animation(opacity=0, duration=.5, t="in_out_cubic")
+    BoxLayout:
+        padding: (dp(30), 0, dp(30), 0)
+        orientation: 'vertical'
+        BoxLayout:
+            id: main_area
+            orientation: 'vertical'
+            size_hint_y: .9
+        TaskStatusBar:
+            id: status_bar
+            size_hint_y: .1

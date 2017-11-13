@@ -1,0 +1,107 @@
+#:import settings settings
+#:import isp utils.isp
+#:import _ utils._
+#:import App kivy.app.App
+
+<BaseScreen@Screen>:
+    background_color: settings.FILL_COLOR
+
+<BaseContainer@BoxLayout>:
+    orientation: 'vertical'
+    padding: dp(30)
+
+<NextButton@Button>:
+    text: _("SURE!")
+    size_hint: .6, .1
+    background_color: 1, 1, 1, 1
+    color: settings.FILL_COLOR
+    pos_hint: {"center_x": .5}
+    on_press: App.get_running_app().sounds['success'].play()
+
+<BaseLabel@Label>:
+    text: "OVERLOAD"
+    color: 1, 1, 1
+    font_size: isp(18)
+    markup: True
+    text_size: self.size
+    valign: 'middle'
+    halign: 'center'
+
+<WelcomeScreen@BaseScreen>:
+    name: 'welcome'
+    BaseContainer:
+        Image:
+            source: "data/img/tutorial/welcome_logo.png"
+            size_hint_y: .4
+        BaseLabel:
+            text: _("[b]WELCOME![/b]")
+            size_hint_y: .1
+        BaseLabel:
+            text: _("Thank you for downloading [b]KOGNITIVO[/b]! \nPlease familarize yourself with [b][ref=terms]Terms and Conditions of Use[/ref][/b] and [b][ref=privacy]Privacy Policy[/ref][/b] and accept them")
+            size_hint_y: .4
+            on_ref_press: import webbrowser; webbrowser.open(settings.TERMS_AND_CONDITIONS_URL if args[1]=='terms' else settings.PRIVACY_POLICY_URL)
+        NextButton:
+            on_press: root.parent.current = root.parent.next()
+            text: _("I ACCEPT")
+
+
+<ImageLabelScreen@BaseScreen>:
+    image: None
+    text: ""
+    BaseContainer:
+        Image:
+            source: root.image
+            size_hint_y: .6
+        BaseLabel:
+            text: root.text
+            size_hint_y: .3
+        NextButton:
+            text: _("GOT IT!")
+            on_press: root.parent.current = root.parent.next()
+
+<StartTestScreen@BaseScreen>
+    name: 'start_test'
+    next_button: next_button
+    BaseContainer:
+        AnchorLayout:
+            size_hint_y: .4
+            Image:
+                source: "data/img/tutorial/start_test.png"
+                size_hint_y: .5
+        BaseLabel:
+            text: _("And now let's start your first test!")
+            size_hint_y: .5
+        NextButton:
+            id: next_button
+            text: _("I AM READY!")
+            on_press: App.get_running_app().manager.get_screen('tasks').quick_test = True; App.get_running_app().manager.to_screen("tasks")
+
+<TutorialScreen>:
+    name: 'tutorial'
+    on_enter: main_manager.current='welcome'
+    main_manager: main_manager
+    ScreenManager:
+        background_color: settings.FILL_COLOR
+        id: main_manager
+        WelcomeScreen
+        ImageLabelScreen:
+            name: 'tasks_to_stats'
+            image: "data/img/tutorial/tasks_to_stats.png"
+            text: _("[b]KOGNITIVO[/b] analyzes your mental activity through mini games!")
+        ImageLabelScreen:
+            name: 'categories'
+            image: _("data/img/tutorial/categories.png")
+            text: _("Every mini game tests one of these base categories")
+        ImageLabelScreen:
+            name: 'notifications'
+            image: "data/img/tutorial/notifications.png"
+            text: _("In order to keep the statistics fresh and precise, keep using the app regularly. [b]KOGNITIVO[/b] will remind you about it")
+        ImageLabelScreen:
+            name: 'tasks'
+            image: "data/img/tutorial/tasks.png"
+            text: _("There are 24 base mini games, more in extensions menu")
+        ImageLabelScreen:
+            name: 'results'
+            image: "data/img/tutorial/results.png"
+            text: _("You can see your results in statistics menu")
+        StartTestScreen

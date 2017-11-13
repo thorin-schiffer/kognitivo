@@ -1,0 +1,44 @@
+<-BoxButtonsAnswerWidget>
+    spacing: dp(10)
+    size_hint_y: .2
+
+<-TableButtonsAnswerWidget>:
+    spacing: (dp(10),dp(10))
+
+<AnswerButton>
+    color: self.NOT_CHECKED_COLOR
+    font_size: isp(20)
+    bold: True
+    background_color_normal: (1, 1, 1, 1)
+    background_color_down: (1, 1, 1, 0.8)
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<BaseAnswerWidget>
+    padding: (0,0,0,dp(30))
+    text: "Overload get_answer_widget \n to return widget you want to place as an answer"
+
+<SymbolAnswerButton>:
+    font_size: isp(30)
+
+<DisappearingSymbolAnswerButton>:
+    font_name: "glyphicons"
+    font_size: isp(30)
+
+<ColorTile>:
+    anchor_x: "center"
+    anchor_y: "center"
+    ColorSquare:
+        size_hint: (.9,.9)
+        background_color: root.color
+
+<-BaseColorAnswerButton>:
+    anchor_x: "center"
+    anchor_y: "center"
+    ColorSquare:
+        size_hint: (.9,.9)
+        background_color: root.inner_color

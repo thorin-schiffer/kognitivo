@@ -1,0 +1,119 @@
+#:import get_hex_from_color kivy.utils.get_hex_from_color
+
+<KognitivoSettingsInterface>:
+    color: (1,0,0,1)
+
+<-KognitivoSettings>:
+    interface_cls: 'KognitivoSettingsInterface'
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: 1,1,1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<KognitivoSettingTitle>:
+    text_size: self.width - 32, None
+    size_hint_y: None
+    height: max(dp(20), self.texture_size[1] + dp(20))
+    font_size: isp(15)
+    bold: True
+    halign: 'center'
+
+<-KognitivoSettingItem>:
+    size_hint: .25, None
+    height: labellayout.texture_size[1] + dp(10)
+    content: content
+    canvas:
+        Color:
+            rgba: settings.FILL_COLOR[:3] + [self.selected_alpha]
+        Rectangle:
+            pos: self.x, self.y + 1
+            size: self.size
+        Color:
+            rgb: settings.TEXT_COLOR
+        Rectangle:
+            pos: self.x, self.y - 2
+            size: self.width, 1
+
+    BoxLayout:
+        pos: root.pos
+
+        Label:
+            size_hint_x: .66
+            id: labellayout
+            markup: True
+            text: u'{0}\n[size=13sp][color={2}]{1}[/color][/size]'.format(_(root.title) or '', _(root.desc) or '', get_hex_from_color(settings.TEXT_COLOR))
+            font_size: isp(15)
+            text_size: self.width - 32, None
+
+        BoxLayout:
+            id: content
+            size_hint_x: .33
+
+<KognitivoSettingOptions>:
+    Label:
+        text: _(root.value) or ''
+        pos: root.pos
+        font_size: isp(15)
+        color: settings.FILL_COLOR
+
+<KognitivoSettingOptionsButton>:
+    text: _(self.value) or ''
+
+<KognitivoSettingString>:
+    Label:
+        text: root.value or ''
+        pos: root.pos
+        font_size: isp(15)
+        color: settings.FILL_COLOR
+
+<-KognitivoCheckBox>:
+    canvas:
+        Color:
+            rgba: settings.FILL_COLOR
+        Line:
+            circle: (self.center_x, self.center_y, isp(10))
+            width: isp(1.5)
+        Color:
+            rgba: settings.FILL_COLOR if self.active else settings.FILL_COLOR_QUASITRANSPARENT
+        Ellipse:
+            size: isp(20), isp(20)
+            pos: int(self.center_x - isp(10)), int(self.center_y - isp(10))
+            segments: 45
+
+<KognitivoSettingBoolean>:
+    KognitivoCheckBox:
+        text: 'Boolean'
+        pos: root.pos
+        active: bool(root.values.index(root.value)) if root.value in root.values else False
+        on_active: root.value = root.values[int(args[1])]
+
+<TimeSettingLabel>:
+    font_size: isp(24)
+    multiline: False
+    size_hint_y: None
+
+<TimeSettingButton>:
+    color: 1, 1, 1, 1
+    markup: True
+    text: "[font=glyphicons]%s[/font]" % ( u"\uE094" if self.direction=='down' else u"\uE093")
+
+<RateUsLabel>:
+    text: _("[b][size=%s]RATE KOGNITIVO[/size][/b]\nIt's the best way to support") % int(isp(25))
+    markup: True
+    size_hint_y: None
+    height: dp(100)
+    halign: "center"
+    on_press: App.get_running_app().tracker.send_event('clicks', 'settings', 'rate');import webbrowser; webbrowser.open(settings.STORE_URL)
+
+<VersionLabel>:
+    font_size: isp(16)
+    markup: True
+    text: "[b]VERSION:[/b]\n" + settings.VERSION
+    halign: "center"
+    text_size: self.size
+    id: version
+    height: dp(100)
+    size_hint_y: None

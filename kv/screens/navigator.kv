@@ -1,0 +1,44 @@
+<NavigationDrawer>:
+    size_hint: (1,1)
+    _side_panel: sidepanel
+    _main_panel: mainpanel
+    side_panel_width: 0.7*self.width
+
+    BoxLayout:
+        id: sidepanel
+        y: root.y
+        x: root.x - (1-root._anim_progress)*root.side_panel_init_offset*root.side_panel_width
+        height: root.height
+        width: root.side_panel_width
+        opacity: root.side_panel_opacity + (1-root.side_panel_opacity)*root._anim_progress
+        canvas.after:
+            Color:
+                rgba: (1,1,1,(1-root._anim_progress)*root.side_panel_darkness)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    BoxLayout:
+        id: mainpanel
+        x: root.x + root._anim_progress * root.side_panel_width * root.main_panel_final_offset
+        y: root.y
+        size: root.size
+        canvas:
+            Color:
+                rgba: (1,1,1,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        canvas.after:
+            Color:
+                rgba: (1,1,1,root._anim_progress*root.main_panel_darkness)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    Image:
+        opacity: 0
+        canvas:
+            Color:
+                rgba: (1,1,0,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size

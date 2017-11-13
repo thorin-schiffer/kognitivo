@@ -1,0 +1,91 @@
+<ClockDial@Widget>:
+    inner_r: 7
+    canvas.before:
+        Color:
+            rgba: settings.FILL_COLOR_SEMITRANSPARENT
+        Ellipse:
+            pos: (self.pos[0] + self.width/2 - min(self.size)/2, self.pos[1] + self.height/2 - min(self.size)/2)
+            size: (min(self.size), min(self.size))
+            segments: 45
+        Color:
+            rgba: settings.FILL_COLOR
+        Ellipse:
+            pos: (self.pos[0] + self.width/2 - dp(self.inner_r), self.pos[1] + self.height/2 - dp(self.inner_r))
+            size: (dp(self.inner_r)*2,dp(self.inner_r)*2)
+            segments: 45
+        Line:
+            circle: (self.center[0], self.center[1], min(self.size)/2)
+            width: dp(1.1)
+
+<ClockLabel@Label>:
+    font_size: isp(20)
+    valign: 'top'
+    bold: True
+    size_hint_y: .1
+
+<Clock>:
+    label: label
+    orientation: 'vertical'
+    spacing: dp(10)
+    ClockDial:
+        canvas.before:
+            PushMatrix
+            Rotate:
+                angle: root.hour_angle
+                axis: (0,0,1)
+                origin: (self.center[0], self.center[1], 0)
+            Line:
+                points: (self.center[0], self.center[1]+dp(self.inner_r), self.center[0], self.center[1]+min(self.size)/4)
+                width: dp(2)
+            PopMatrix
+            PushMatrix
+            Rotate:
+                angle: root.minute_angle
+                axis: (0,0,1)
+                origin: (self.center[0], self.center[1], 0)
+            Line:
+                points: (self.center[0], self.center[1]+dp(self.inner_r), self.center[0], self.center[1]+min(self.size)/2.5)
+                width: dp(1.1)
+            PopMatrix
+    ClockLabel:
+        id: label
+
+#:set interval_part 0.8
+<-IntervalClock>:
+    label: label
+    orientation: 'vertical'
+    spacing: dp(10)
+    ClockDial:
+        canvas.before:
+            Color:
+                rgba: settings.FILL_COLOR_SEMITRANSPARENT
+            Ellipse:
+                pos: (self.pos[0] + self.width/2 - interval_part*min(self.size)/2, self.pos[1] + self.height/2 - interval_part*min(self.size)/2)
+                size: (interval_part*min(self.size), interval_part*min(self.size))
+                angle_start: 0
+                angle_end: root.hour_angle
+                segments: 45
+    ClockLabel:
+        id: label
+
+<-TimeCalculationDescriptionWidget>:
+    left_clock: left_clock
+    right_clock: right_clock
+    spacing: dp(30)
+    padding: (0,0,0,dp(30))
+    Clock:
+        id: left_clock
+    IntervalClock:
+        id: right_clock
+        part: 0.6
+
+<TimeCalculationMinutesDescriptionWidget>:
+    left_clock: left_clock
+    right_clock: right_clock
+    spacing: dp(30)
+    padding: (0,0,0,dp(30))
+    Clock:
+        id: left_clock
+    MinutesIntervalClock:
+        id: right_clock
+        part: 0.6

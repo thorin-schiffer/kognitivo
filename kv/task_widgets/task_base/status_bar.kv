@@ -1,0 +1,41 @@
+#:import isp utils.isp
+#:import Animation kivy.animation.Animation
+
+<TaskStatusBarTime>:
+    opacity: 0
+    animation: Animation(opacity=1, duration=.5, t='in_out_cubic')
+    label: label.__self__
+    Label:
+        size_hint: 1, 1
+        pos_hint: {"center_x": .5, "center_y": .5}
+        id: label
+        markup: True
+        font_size: isp(20)
+
+<TaskStatusBarCorrectness>:
+    markup: True
+    font_size: isp(20)
+
+<TaskStatusBarPoints>:
+    text: ""
+    markup: True
+    font_size: isp(20)
+    bold: True
+    halign: "center"
+    label_size: isp(10)
+
+<TaskStatusBar>:
+    time_widget: time.__self__
+    orientation: 'horizontal'
+    correctness_widget: correctness.__self__
+    points_widget: points.__self__
+    size_hint_y: 0.15
+    padding: (0,0,0,dp(15))
+    TaskStatusBarCorrectness:
+        opacity: 0
+        animation: Animation(opacity=1, duration=.5, t='in_out_cubic')
+        id: correctness
+    TaskStatusBarPoints:
+        id: points
+    TaskStatusBarTime:
+        id: time

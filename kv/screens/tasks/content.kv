@@ -1,0 +1,176 @@
+#:import settings settings
+#:import isp utils.isp
+
+<TestIconPanel>
+    padding: dp(10), 0
+    spacing: dp(5)
+
+<TestOutroDiagramLabel>:
+    halign: 'center'
+    markup: True
+
+<PointsLabel>:
+    pos_hint: {"right": 1}
+    halign: "right"
+    markup: True
+
+<SessionTasksCounter>:
+    markup: True
+
+<TestStatus>:
+    orientation: 'horizontal'
+    padding: dp(15), dp(15)
+    task_number_widget: tasks_counter
+    best_points_widget: points_label
+    SessionTasksCounter:
+        id: tasks_counter
+        size_hint_x: .35
+    Widget:
+        size_hint_x: .2
+    PointsLabel:
+        id: points_label
+        size_hint_x: .45
+
+<TestScreen>:
+    name: "test"
+    task_container: task_container
+    icon: icon
+    status: status
+    BoxLayout:
+        orientation: "vertical"
+        AnchorLayout:
+            size_hint: (1., .15)
+            TaskIcon:
+                id: icon
+                opacity: 0
+        AnchorLayout:
+            id: task_container
+            opacity: 0
+        TestStatus:
+            id: status
+            size_hint: (1., .15)
+
+<TestOutro>:
+    name: "outro"
+    diagrams_label_container: diagrams_label_container
+    diagrams_container: diagrams_container
+    status_label: status_label
+    status_image: status_image
+    status_container: status_container
+    BoxLayout:
+        orientation: 'vertical'
+        padding: (dp(30), dp(30), dp(30), dp(30))
+        BoxLayout:
+            id: status_container
+            orientation: 'vertical'
+            size_hint_y: .4
+            padding: dp(0), dp(0), dp(0), dp(30)
+            Label:
+                text: ""
+                markup: True
+                font_size: isp(20)
+                halign: 'center'
+                bold: True
+                id: status_label
+            Image:
+                id: status_image
+                source: "data/img/buttons/task_finished.png"
+        BoxLayout:
+            id: diagrams_container
+            padding: (dp(30), dp(30), dp(30), dp(30))
+            spacing: dp(50)
+            size_hint_y: .3
+        BoxLayout:
+            id: diagrams_label_container
+            size_hint_y: .1
+        BoxLayout:
+            size_hint_y: .2
+            ImageButton:
+                source: "data/img/buttons/next_button.png"
+                on_press: App.get_running_app().manager.to_screen('activity')
+            ImageButton:
+                source: "data/img/buttons/share_button.png"
+                on_press: root.share()
+        DidYouKnowLabel:
+            size_hint_y: .1
+
+<TaskEntry>:
+    Image:
+        source: "atlas://data/atlas/tasks/%s" % root.task_key
+
+<TaskSetBuyButton@ButtonBehavior+ColorSquare+Label>
+
+<TaskSet>:
+    height: dp(150)
+    size_hint_y: None
+    size_hint_x: 1
+    padding: dp(10)
+    play_button: play_button.__self__
+    tasks_container: tasks_container.__self__
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            size_hint_y: .2
+            text: root.title.upper()
+            text_size: self.size
+            halign: 'center'
+            valign: 'bottom'
+            bold: True
+        BoxLayout:
+            padding: dp(10)
+            Image:
+                size_hint: .2, .9
+                source: root.icon
+                allow_stretch: True
+            GridLayout:
+                size_hint: .6, 1
+                cols: 5
+                rows: 4
+                spacing: dp(5)
+                padding: dp(10)
+                id: tasks_container
+            AnchorLayout:
+                size_hint: .2, 1
+                pos_hint: {'center_y': .5}
+                anchor_x: 'center'
+                anchor_y: 'center'
+                TaskSetBuyButton:
+                    id: play_button
+                    text_size: self.size
+                    font_size: isp(12)
+                    halign: 'center'
+                    valign: 'middle'
+                    color: 1, 1, 1, 1
+                    bold: True
+                    background_color: root.color
+                    on_press: root.play()
+
+
+<TaskSetsScreen>:
+    name: 'task_sets'
+    container: container.__self__
+    ScrollView:
+        do_scroll_x: False
+        height: root.height
+        BoxLayout:
+            id: container
+            size_hint_y: None
+            orientation: 'vertical'
+
+<TaskScreenManager>
+    outro: outro.__self__
+    test_screen: test_screen.__self__
+    task_sets_screen: task_sets_screen.__self__
+    TaskSetsScreen:
+        id: task_sets_screen
+    TestScreen:
+        id: test_screen
+    TestOutro:
+        id: outro
+
+
+<TaskIcon>
+    complete_source: "data/img/buttons/task_finished.png"
+    is_complete: False
+    size_hint: (.1, .5)
+    opacity: 0

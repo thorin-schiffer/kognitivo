@@ -1,0 +1,87 @@
+[
+    {
+        "type": "title",
+        "title": _("Notifications")
+    },
+    {
+        "type": "bool",
+        "title": _("Enable"),
+        "desc": _("Would you like to be reminded of the regular tests?"),
+        "section": "preferences",
+        "key": "enable_notifications",
+        "toggled_keys": ["morning_notification_time", "lunch_notification_time", "evening_notification_time"]
+    },
+    {
+        "type": "time",
+        "title": _("Morning test"),
+        "desc": _("Choose the time which would suit you best for kognitivo to measure your morning activity"),
+        "section": "preferences",
+        "key": "morning_notification_time"
+    },
+    {
+        "type": "time",
+        "title": _("Lunch test"),
+        "desc": _("Choose the time when you have your lunch"),
+        "section": "preferences",
+        "key": "lunch_notification_time"
+    },
+    {
+        "type": "time",
+        "title": _("Evening test"),
+        "desc": _("When do you finish your work?"),
+        "section": "preferences",
+        "key": "evening_notification_time"
+    },
+    {
+        "type": "title",
+        "title": _("Miscellaneous")
+    },
+    {
+        "type": "options",
+        "title": _("Language"),
+        "desc": _("Choose your language (restart needed)"),
+        "section": "preferences",
+        "key": "language",
+        "options": [_("en"), _("ru"),_("de"),_("es"),_("ua"), _("it"),_("system")]
+    },
+    {
+        "type": "bool",
+        "title": _("Sounds"),
+        "desc": _("Turn on sounds?"),
+        "section": "preferences",
+        "key": "sound"
+    },
+    {
+        "type": "bool",
+        "title": _("Vibration"),
+        "desc": _("Turn on vibration?"),
+        "section": "preferences",
+        "key": "vibration"
+    },
+    {
+        "type": "options",
+        "title": _("Font size"),
+        "desc": _("Change the right font size if the text is too big or too small (restart needed)"),
+        "section": "preferences",
+        "key": "font_size",
+        "options": [_("extra_small"), _("small"),_("normal"),_("big"),_("extra_big")]
+    },
+    {
+        "type": "bool",
+        "title": _("Google login"),
+        "platforms": ["android", "linux"],
+        "profiles": [""],
+        "desc": _("Do you want to be logged in with google account?"),
+        "section": "preferences",
+        "key": "google_auto_login"
+    },
+    {
+        "type": "button",
+        "title": _("Log out google"),
+        "platforms": ["android", "linux"],
+        "profiles": [""],
+        "desc": _(" "),
+        "section": "preferences",
+        "key": "google_logout"
+    }
+]

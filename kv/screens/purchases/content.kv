@@ -1,0 +1,137 @@
+#:import isp utils.isp
+<-BuyButton>:
+    pos_hint: {"center_x": .5}
+    background_color: settings.ACTIVITY_COLORS_TRANSPARENT[None]
+    color: settings.TEXT_COLOR
+    label: label.__self__
+    text: "BUY"
+    font_size: isp(13)
+    canvas.before:
+        Color:
+            rgba: root.background_color or (1, 0, 0, 1)
+        Rectangle:
+            pos: (self.x + self.height / 2, self.y + self.height * .05)
+            size: (self.width - self.height if self.width > self.height else 0, self.height * .9)
+        Ellipse:
+            pos: (self.x, self.y + self.height * .05)
+            size: (self.height if self.width > self.height else 0, self.height * .9)
+            angle_start: -180
+            angle_end: 0
+            segments: 45
+        Ellipse:
+            pos: (self.x + self.width - self.height, self.y + self.height * .05)
+            size: (self.height if self.width > self.height else 0, self.height * .9)
+            angle_start: 0
+            angle_end: 180
+            segments: 45
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            texture: self.texture
+            size: (self.height, self.height)
+            pos: self.pos
+    Label:
+        id: label
+        text: root.text
+        color: root.color
+        pos: root.pos
+        size: root.size
+        bold: True
+        font_size: root.font_size
+
+<TaskTypeSlide>:
+    orientation: "vertical"
+    title: title.__self__
+    description: description.__self__
+    spacing: dp(10)
+    Label:
+        id: title
+        size_hint: 1., .1
+        bold: True
+        font_size: isp(16)
+    Label:
+        id: description
+        size_hint: 1., .2
+        font_size: isp(14)
+        text_size: self.size
+        halign: "center"
+        valign: "top"
+        pos_hint: {"center_x": .5}
+
+
+<PromoCarousel>:
+    direction: 'top'
+    loop: True
+
+<PurchaseDetailScreen>:
+    orientation: "horizontal"
+    buy_button: buy_button
+    promo_carousel: promo_carousel
+    BoxLayout:
+        orientation: 'vertical'
+        padding: dp(30)
+        spacing: dp(30)
+        BoxLayout:
+            size_hint: 1., .15
+            Image:
+                size_hint: .8, 1.
+                source: root.icon
+                pos_hint: {"center_x": .5, "center_y": .5}
+        Label:
+            size_hint: 1., .15
+            text: "[b]%s[/b]\n%s" % (root.title.upper(), root.description)
+            markup: True
+            text_size: self.size
+            valign: "middle"
+            halign: "center"
+            font_size: isp(15)
+        BoxLayout:
+            ImageButton:
+                size_hint: .1, .8
+                source: "data/img/buttons/back_button.png"
+                pos_hint: {"center_x": .5, "center_y": .5}
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = root.manager.previous()
+            PromoCarousel:
+                id: promo_carousel
+                item_id: root.item_id
+            ImageButton:
+                size_hint: .1, .8
+                source: "data/img/buttons/next_button.png"
+                on_press:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = root.manager.next()
+                pos_hint: {"center_x": .5, "center_y": .5}
+        BuyButton:
+            size_hint: .8, .15
+            id: buy_button
+            source: "atlas://data/atlas/menu/buy"
+            on_press: root.buy()
+            text: _("GET FOR ONLY %s") % root.price
+            point_activity: settings.REACTION_FAMILY
+            font_size: isp(14)
+
+<ThankYouPopup>:
+    size_hint: (1., .4)
+    title: _("Thank you!")
+    title_align: "center"
+    title_size: isp(20)
+    separator_height: 0
+    background_color: 1, 1, 1, 1
+    content: content
+    BoxLayout:
+        id: content
+        Image:
+            source: "data/success.png"
+
+<InternetProblemsScreen>:
+    BoxLayout:
+        size_hint: .7, .8
+        pos_hint: {"center_x": .5, "center_y": .5}
+        orientation: 'vertical'
+        Image:
+            source: "data/crash.png"
+        Label:
+            size_hint_y: .2
+            text: _("Internet connection problems, please try later.")

@@ -1,0 +1,49 @@
+#:import _ utils._
+<StartTestButton>:
+    pos_hint: {'center_x': 0.5}
+    Image:
+        pos_hint: {"center_x": .5, "center_y": .5}
+        size_hint: 1, 1
+        source: "data/img/buttons/play.png"
+
+<IntroHint>:
+    size_hint: (1,1)
+    padding: (dp(0), dp(10), dp(0), dp(0))
+    spacing: dp(10)
+    orientation: 'vertical'
+    id: intro
+    title_label: title_label
+    description_label:description_label
+    icon_image: icon_image
+    tutorial: tutorial
+
+    Label:
+        id: title_label
+        font_size: isp(20)
+        size_hint: (1, .2)
+        bold: True
+        text_size: self.size
+        halign: 'center'
+        valign: 'middle'
+        name: "title"
+    Label:
+        id: description_label
+        font_size: isp(18)
+        size_hint: (1, .3)
+        halign: 'center'
+        valign: 'middle'
+        text_size: self.size
+        name: "description"
+    FloatLayout:
+        TutorialAnimator:
+            id: tutorial
+            pos_hint: {"center_y": .5, "center_x": .5}
+            size_hint: 1, 1
+            task_key: root.task.TASK_KEY
+        StartTestButton:
+            intro: intro
+            size_hint: .15, .15
+            pos_hint: {"center_y": .0, "center_x": .5}
+            id: icon_image
+            name: "task_icon"
+            family: None

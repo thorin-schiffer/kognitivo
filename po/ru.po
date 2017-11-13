@@ -1,0 +1,1250 @@
+# sergey, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-29 11:51+0200\n"
+"PO-Revision-Date: 2015-10-04 18:36+0100\n"
+"Last-Translator: sergey\n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: settings.translate.json:4
+msgid "Notifications"
+msgstr "Оповещения"
+
+#: settings.translate.json:8
+msgid "Enable"
+msgstr "Включить?"
+
+#: settings.translate.json:9
+msgid "Would you like to be reminded of the regular tests?"
+msgstr "Тебе нужны напоминания о прохождении тестов?"
+
+#: settings.translate.json:16
+msgid "Morning test"
+msgstr "Утренний тест"
+
+#: settings.translate.json:17
+msgid ""
+"Choose the time which would suit you best for kognitivo to measure your "
+"morning activity"
+msgstr "Когда ты обычно просыпаешься?"
+
+#: settings.translate.json:23
+msgid "Lunch test"
+msgstr "Обеденный тест"
+
+#: settings.translate.json:24
+msgid "Choose the time when you have your lunch"
+msgstr "Когда ты обычно обедаешь?"
+
+#: settings.translate.json:30
+msgid "Evening test"
+msgstr "Вечерний тест"
+
+#: settings.translate.json:31
+msgid "When do you finish your work?"
+msgstr "Когда ты обычно приходишь с работы?"
+
+#: settings.translate.json:37
+msgid "Miscellaneous"
+msgstr "Разное"
+
+#: settings.translate.json:41
+msgid "Language"
+msgstr "Язык"
+
+#: settings.translate.json:42
+msgid "Choose your language (restart needed)"
+msgstr "Выбери язык (нужна перезагрузка)"
+
+#: settings.translate.json:45
+msgid "en"
+msgstr "English"
+
+#: settings.translate.json:45
+msgid "ru"
+msgstr "Русский"
+
+#: settings.translate.json:45
+msgid "de"
+msgstr "Deutsch"
+
+#: settings.translate.json:45
+msgid "es"
+msgstr "Español"
+
+#: settings.translate.json:45
+msgid "ua"
+msgstr "Українська"
+
+#: settings.translate.json:45
+msgid "it"
+msgstr "Italiano"
+
+#: settings.translate.json:45
+msgid "system"
+msgstr "Такой же, как в системе"
+
+#: settings.translate.json:49
+msgid "Sounds"
+msgstr "Звуки"
+
+#: settings.translate.json:50
+msgid "Turn on sounds?"
+msgstr "Включить звуки?"
+
+#: settings.translate.json:56
+msgid "Vibration"
+msgstr "Вибрация"
+
+#: settings.translate.json:57
+msgid "Turn on vibration?"
+msgstr "Включить вибрацию?"
+
+#: settings.translate.json:63
+msgid "Font size"
+msgstr "Размер шрифта"
+
+#: settings.translate.json:64
+msgid ""
+"Change the right font size if the text is too big or too small (restart "
+"needed)"
+msgstr ""
+"Установи подходящий размер шрифта, если он кажется слишком большим или "
+"слишком маленьким (нужен перезапуск)"
+
+#: settings.translate.json:67
+msgid "extra_small"
+msgstr "очень маленький"
+
+#: settings.translate.json:67
+msgid "small"
+msgstr "маленький"
+
+#: settings.translate.json:67
+msgid "normal"
+msgstr "обычный"
+
+#: settings.translate.json:67
+msgid "big"
+msgstr "большой"
+
+#: settings.translate.json:67
+msgid "extra_big"
+msgstr "очень большой"
+
+#: settings.translate.json:71
+msgid "Google login"
+msgstr "Логин через Google"
+
+#: settings.translate.json:74
+msgid "Do you want to be logged in with google account?"
+msgstr "Авторизоваться через Google аккаунт?"
+
+#: settings.translate.json:80
+msgid "Log out google"
+msgstr "Выйти из гугла"
+
+#: settings.translate.json:83
+msgid " "
+msgstr " "
+
+#: app.py:294
+msgid "SETTINGS"
+msgstr "НАСТРОЙКИ"
+
+#: screens/activity/diagrams/__init__.py:63
+msgid "MO"
+msgstr "ПН"
+
+#: screens/activity/diagrams/__init__.py:64
+msgid "TU"
+msgstr "ВТ"
+
+#: screens/activity/diagrams/__init__.py:65
+msgid "WE"
+msgstr "СР"
+
+#: screens/activity/diagrams/__init__.py:66
+msgid "TH"
+msgstr "ЧТ"
+
+#: screens/activity/diagrams/__init__.py:67
+msgid "FR"
+msgstr "ПТ"
+
+#: screens/activity/diagrams/__init__.py:68
+msgid "SA"
+msgstr "СБ"
+
+#: screens/activity/diagrams/__init__.py:69
+msgid "SU"
+msgstr "ВС"
+
+#: screens/activity/diagrams/__init__.py:183
+#: screens/activity/diagrams/__init__.py:421 screens/tasks/content.py:426
+msgid "GET PREMIUM"
+msgstr "КУПИТЬ ПРЕМИУМ"
+
+#: screens/activity/diagrams/__init__.py:250 screens/tasks/content.py:455
+#: kv/screens/activity/content.kv:31
+msgid "ANALYTICS"
+msgstr "АНАЛИЗ"
+
+#: screens/activity/diagrams/__init__.py:257 screens/tasks/content.py:464
+#: kv/screens/activity/content.kv:39
+msgid "ATTENTION"
+msgstr "ВНИМАНИЕ"
+
+#: screens/activity/diagrams/__init__.py:264 screens/tasks/content.py:473
+#: kv/screens/activity/content.kv:47
+msgid "REACTION"
+msgstr "РЕАКЦИЯ"
+
+#: screens/activity/diagrams/__init__.py:271 screens/tasks/content.py:482
+#: kv/screens/activity/content.kv:55
+msgid "MEMORY"
+msgstr "ПАМЯТЬ"
+
+#: screens/activity/diagrams/__init__.py:278
+msgid "reading"
+msgstr "чтение"
+
+#: screens/activity/diagrams/__init__.py:285
+msgid "writing"
+msgstr "письмо"
+
+#: screens/activity/diagrams/__init__.py:292
+msgid "math"
+msgstr "математика"
+
+#: screens/activity/diagrams/__init__.py:299
+msgid "driving"
+msgstr "вождение"
+
+#: screens/activity/diagrams/__init__.py:306
+msgid "internet"
+msgstr "интернет"
+
+#: screens/activity/diagrams/__init__.py:313
+msgid "studying"
+msgstr "обучение"
+
+#: screens/activity/diagrams/__init__.py:320
+msgid "navigation"
+msgstr "навигация"
+
+#: screens/activity/diagrams/__init__.py:327
+msgid "languages"
+msgstr "языки"
+
+#: screens/activity/diagrams/__init__.py:334
+msgid "strategy games"
+msgstr "стратегии"
+
+#: screens/activity/diagrams/__init__.py:341
+msgid "action games"
+msgstr "стрелялки"
+
+#: screens/activity/diagrams/__init__.py:348
+msgid "quizzes"
+msgstr "викторины"
+
+#: screens/activity/diagrams/__init__.py:355
+msgid "arcades"
+msgstr "аркады"
+
+#: screens/activity/diagrams/__init__.py:362
+msgid "puzzles"
+msgstr "головоломки"
+
+#: screens/activity/diagrams/__init__.py:369
+msgid "card games"
+msgstr "карточные игры"
+
+#: screens/activity/diagrams/__init__.py:376
+msgid "casual games"
+msgstr "казуальные игры"
+
+#: screens/activity/diagrams/__init__.py:383
+msgid "racing games"
+msgstr "гонки"
+
+#: screens/activity/diagrams/__init__.py:390
+msgid "word games"
+msgstr "словесные игры"
+
+#: screens/activity/diagrams/base.py:308
+msgid ""
+"This is your first test in this category, so there is no statistics. Please "
+"finish the test to get some."
+msgstr ""
+"Это твой первый тест в этой категории, поэтому по ней нет статистики. "
+"Закончи этот тест, чтобы получить к ней доступ"
+
+#: screens/activity/activity.py:97
+msgid "Congratulations! This tutorial is finished. Happy researching!"
+msgstr "Поздравляем! Обучение закончено и можно начать тренироваться. Удачи!"
+
+#: screens/purchases/content.py:33
+#: kv/task_widgets/find_in_table/find_figures.kv:2
+msgid "Figure Out"
+msgstr "Отпадные фигуры"
+
+#: screens/purchases/content.py:34
+#: kv/task_widgets/find_in_table/find_figures.kv:3
+#: kv/task_widgets/find_in_table/find_figures.kv:6
+msgid "Find all correctly named figures"
+msgstr "Жми правильно названные фигуры"
+
+#: screens/purchases/content.py:37
+#: kv/task_widgets/find_in_table/find_primer.kv:2
+msgid "Right Choice"
+msgstr "Верный Выбор"
+
+#: screens/purchases/content.py:38
+#: kv/task_widgets/find_in_table/find_primer.kv:3
+#: kv/task_widgets/find_in_table/find_primer.kv:6
+msgid "Find all right expressions"
+msgstr "Найди все верные выражения"
+
+#: screens/purchases/content.py:41 kv/task_widgets/calculation/division.kv:2
+msgid "Super Brain: Division"
+msgstr "Супермозг: деление"
+
+#: screens/purchases/content.py:42 screens/purchases/content.py:46
+#: screens/purchases/content.py:50
+#: kv/task_widgets/calculation/multiplication.kv:3
+#: kv/task_widgets/calculation/numbers_calculation.kv:3
+#: kv/task_widgets/calculation/percents.kv:3
+#: kv/task_widgets/calculation/division.kv:3
+msgid "Calculate the result!"
+msgstr "Найди число, которое должно стоять на месте \"?\""
+
+#: screens/purchases/content.py:45 kv/task_widgets/calculation/percents.kv:2
+msgid "Super Brain: Percents"
+msgstr "Супермозг: проценты"
+
+#: screens/purchases/content.py:49
+#: kv/task_widgets/calculation/multiplication.kv:2
+msgid "Multi Super Brain"
+msgstr "МультиСупермозг"
+
+#: screens/purchases/content.py:53 screens/purchases/content.py:54
+#: kv/task_widgets/calculation/time_subtraction.kv:2
+msgid "Time Machine: Subtraction"
+msgstr "Машина времени: вычитание"
+
+#: screens/purchases/content.py:57
+#: kv/task_widgets/calculation/time_calculation_minutes.kv:2
+msgid "Time Machine: Last Minutes"
+msgstr "Машина времени: последние минуты"
+
+#: screens/purchases/content.py:58
+#: kv/task_widgets/calculation/time_calculation_minutes.kv:3
+msgid ""
+"Add the interval in minutes of the\n"
+" right clock to the left one"
+msgstr ""
+"Прибавь ко времени слева интервал времени в минутах справа, выбери результат."
+
+#: screens/purchases/content.py:177
+msgid "TRY NOW"
+msgstr "ИГРАТЬ"
+
+#: screens/tasks/content.py:81
+msgid "Typing monkey"
+msgstr "Примат"
+
+#: screens/tasks/content.py:82
+msgid "Homo erectus"
+msgstr "Человек умелый"
+
+#: screens/tasks/content.py:83
+msgid "Slowpoke"
+msgstr "Слоупок"
+
+#: screens/tasks/content.py:84
+msgid "Homo sapiens"
+msgstr "Человек разумный"
+
+#: screens/tasks/content.py:85
+msgid "Junkie"
+msgstr "Торчок"
+
+#: screens/tasks/content.py:86
+msgid "Mr Perfect"
+msgstr "Идеал"
+
+#: screens/tasks/content.py:87
+msgid "Genius"
+msgstr "Гений"
+
+#: screens/tasks/content.py:88
+msgid "Nerd"
+msgstr "Очкарик"
+
+#: screens/tasks/content.py:89
+msgid "Holmes"
+msgstr "Холмс. Шерлок Холмс."
+
+#: screens/tasks/content.py:90
+msgid "Einstein"
+msgstr "Эйнштейн"
+
+#: screens/tasks/content.py:91
+msgid "Kognimaster"
+msgstr "Kognimaster"
+
+#: screens/tasks/content.py:103
+#, python-format
+msgid "[size=20sp][color=#6666660A]%s POINTS[/color][/size]"
+msgstr "[size=20sp][color=#6666660A]%s ОЧКОВ[/color][/size]"
+
+#: screens/tasks/content.py:111
+msgid ""
+"of your\n"
+"[b]Day's[/b] average"
+msgstr ""
+"от твоего\n"
+"[b]дневного[/b] среднего"
+
+#: screens/tasks/content.py:116
+msgid ""
+"of your\n"
+"[b]Week's[/b] average"
+msgstr ""
+"от твоего\n"
+"[b]недельного[/b] среднего"
+
+#: screens/tasks/content.py:140
+#, python-format
+msgid "My cognitive status #kognitivo #braintrainer %s"
+msgstr "Мой когнитивный статус #kognitivo #braintrainer %s"
+
+#: screens/tasks/content.py:155
+#, python-format
+msgid "BEST RESULT: [b]%s[/b] POINTS"
+msgstr "РЕКОРД: [b]%s[/b] ОЧКОВ"
+
+#: screens/tasks/content.py:163
+#, python-format
+msgid ""
+"[color=#408742ff][font=glyphicons][/font][/color] task #%(counter)s/%(full)s"
+msgstr ""
+"[color=#408742ff][font=glyphicons][/font][/color] задача №%(counter)s/"
+"%(full)s"
+
+#: screens/tasks/content.py:421
+msgid "PLAY"
+msgstr "ИГРАТЬ"
+
+#: screens/tasks/content.py:424
+msgid "BUY"
+msgstr "КУПИТЬ"
+
+#: screens/tasks/content.py:491
+msgid "ANALYTICS PREMIUM"
+msgstr "АНАЛИЗ ПРЕМИУМ"
+
+#: screens/tasks/content.py:501
+msgid "ATTENTION PREMIUM"
+msgstr "ВНИМАНИЕ ПРЕМИУМ"
+
+#: screens/tasks/content.py:511
+msgid "MATH GEEK SET"
+msgstr "МАТЕМАТИЧЕСКИЕ"
+
+#: screens/tasks/content.py:519
+msgid "TIME TASKS SET"
+msgstr "НА ВРЕМЯ"
+
+#: screens/tasks/content.py:527
+msgid "CLASH TASKS SET"
+msgstr "ПРОТИВОРЕЧИЯ"
+
+#: free_strings.py:3
+msgid "JAN"
+msgstr "ЯНВ"
+
+#: free_strings.py:4
+msgid "FEB"
+msgstr "ФЕВ"
+
+#: free_strings.py:5
+msgid "MAR"
+msgstr "МАР"
+
+#: free_strings.py:6
+msgid "APR"
+msgstr "АПР"
+
+#: free_strings.py:7
+msgid "MAY"
+msgstr "МАЙ"
+
+#: free_strings.py:8
+msgid "JUN"
+msgstr "ЯНВ"
+
+#: free_strings.py:9
+msgid "JUL"
+msgstr "ИЮЛ"
+
+#: free_strings.py:10
+msgid "AUG"
+msgstr "АВГ"
+
+#: free_strings.py:11
+msgid "SEP"
+msgstr "СЕН"
+
+#: free_strings.py:12
+msgid "OCT"
+msgstr "ОКТ"
+
+#: free_strings.py:13
+msgid "NOV"
+msgstr "НОВ"
+
+#: free_strings.py:14
+msgid "DEC"
+msgstr "ДЕК"
+
+#: settings_widget.py:67
+msgid "Cancel"
+msgstr "Отмена"
+
+#: library_widgets.py:360
+msgid ""
+"Found a bug? Let me know: [ref=Kognitivo: I found a bug][b]"
+"[font=glyphicons][/font] sergey@cheparev.com[/b][/ref]"
+msgstr ""
+"Баг? Напиши мне, я поправлю: [ref=Kognitivo: Нашелся баг][b]"
+"[font=glyphicons][/font] sergey@cheparev.com[/b][/ref]"
+
+#: library_widgets.py:365
+msgid ""
+"Got a feature idea? Share it on [ref=feature][b][font=glyphicons][/font] "
+"FACEBOOK[/b][/ref]"
+msgstr ""
+"Есть идеи? Расскажи о них на [ref=feature][b][font=glyphicons][/font] "
+"FACEBOOK[/b][/ref]"
+
+#: library_widgets.py:370
+msgid ""
+"Found a misspelled word? Let me know: [ref=Kognitivo: Grammar][b]"
+"[font=glyphicons][/font] sergey@cheparev.com[/b][/ref]"
+msgstr ""
+"Нашлась грамматическая ошибка? Напиши мне о ней, я поправлю: [ref=Kognitivo: "
+"Правописание][b][font=glyphicons][/font] sergey@cheparev.com[/b][/ref]"
+
+#: library_widgets.py:376
+msgid ""
+"Change font size in [ref=font][b][font=glyphicons][/font]settings[/b][/ref] "
+"if it is too big or to small"
+msgstr ""
+"Измени размер шрифта в [ref=font][b][font=glyphicons][/font]настройках[/b][/"
+"ref], если он слишком большой или слишком маленький"
+
+#: library_widgets.py:382
+msgid ""
+"Want most recent features? Become a [ref=tester][b][font=glyphicons][/"
+"font]tester[/b][/ref]"
+msgstr ""
+"Хочешь самые новые фичи? Стань [ref=tester][b][font=glyphicons][/"
+"font]тестером[/b][/ref]"
+
+#: library_widgets.py:388
+msgid "The more you practice, the more accurate is the statistics"
+msgstr "Чем больше ты занимаешься, тем точнее статистика"
+
+#: library_widgets.py:395
+msgid ""
+"Need more tasks? Take a look [ref=purchase][b][font=glyphicons][/font] "
+"HERE[/b][/ref]"
+msgstr ""
+"Еще задач? Посмотри [ref=purchase][b][font=glyphicons][/font] ЗДЕСЬ[/b][/"
+"ref]"
+
+#: library_widgets.py:400
+msgid ""
+"Try 7 days of full features for free with [ref=premium_subscription][b]"
+"[font=glyphicons][/font]premium subscription[/b][/ref]"
+msgstr ""
+"Попробуй 7 дней полной функциональности бесплатно c "
+"[ref=premium_subscription][b][font=glyphicons][/font]премиум подпиской[/b][/"
+"ref]"
+
+#: library_widgets.py:406
+msgid ""
+"Connect your [ref=google][b][font=glyphicons][/font]Google account[/b][/"
+"ref] in order to compete with friends"
+msgstr ""
+"Подключи [ref=google][b][font=glyphicons][/font]аккаунт Google[/b][/ref], "
+"чтобы соревноваться с друзьями"
+
+#: notifications_scheduler.py:39
+msgid "It's time to measure your skills!"
+msgstr "Время измерить твои способности!"
+
+#: task_widgets/find_in_table/find_figures.py:63
+msgid "TRIANGLE"
+msgstr "ТРЕУГОЛЬНИК"
+
+#: task_widgets/find_in_table/find_figures.py:64
+msgid "SQUARE"
+msgstr "КВАДРАТ"
+
+#: task_widgets/find_in_table/find_figures.py:65
+msgid "STAR"
+msgstr "ЗВЕЗДА"
+
+#: task_widgets/find_in_table/find_figures.py:66
+msgid "PENTAGON"
+msgstr "ПЯТИУГОЛЬНИК"
+
+#: task_widgets/find_in_table/find_figures.py:67
+msgid "CIRCLE"
+msgstr "КРУГ"
+
+#: task_widgets/find_in_table/find_figures.py:68
+msgid "DIAMOND"
+msgstr "РОМБ"
+
+#: task_widgets/find_in_table/find_contraveral.py:54
+msgid "RED"
+msgstr "КРАСНЫЙ"
+
+#: task_widgets/find_in_table/find_contraveral.py:55
+msgid "BROWN"
+msgstr "КОРИЧНЕВЫЙ"
+
+#: task_widgets/find_in_table/find_contraveral.py:56
+msgid "GREEN"
+msgstr "ЗЕЛЕНЫЙ"
+
+#: task_widgets/find_in_table/find_contraveral.py:57
+msgid "BLUE"
+msgstr "СИНИЙ"
+
+#: task_widgets/find_in_table/find_contraveral.py:58
+msgid "BLACK"
+msgstr "ЧЕРНЫЙ"
+
+#: task_widgets/find_in_table/find_contraveral.py:59
+msgid "PURPLE"
+msgstr "ФИОЛЕТОВЫЙ"
+
+#: task_widgets/task_base/status_bar.py:64
+#, python-format
+msgid ""
+"%s\n"
+"[size=%s]POINTS[/font]"
+msgstr ""
+"%s\n"
+"[size=%s]ОЧКОВ[/font]"
+
+#: task_widgets/calculation/percents.py:30
+#, python-format
+msgid "%(percents)s%% of %(base)s?"
+msgstr "%(percents)s%% от %(base)s?"
+
+#: task_widgets/calculation/time_calculation_minutes.py:21
+msgid "min."
+msgstr "мин."
+
+#: kv/screens/activity/diagrams/__init__.kv:17
+msgid ""
+"This is the hour activity diagram. At the bottom side is the time of the day "
+"and the bars show your activity level in percents"
+msgstr ""
+"Это диаграмма активности по часам. Снизу указано время, столбцы показывают "
+"уровни активности в процентах"
+
+#: kv/screens/activity/diagrams/__init__.kv:31
+msgid ""
+"This is week day activity diagram. At the bottom side is the week day and "
+"the bars show your activity level in percents"
+msgstr ""
+"Это диаграмма активности по дням недели. Снизу указан день недели, столбцы "
+"показывают уровни активности в процентах"
+
+#: kv/screens/activity/diagrams/__init__.kv:45
+msgid ""
+"This is progress diagram. At the bottom side is the date, the graph shows "
+"your activity of last two weeks in percents"
+msgstr ""
+"Это диаграмма прогресса. Снизу указана дата, график показывает изменение "
+"когнитивной активности за последние две недели"
+
+#: kv/screens/activity/diagrams/__init__.kv:59
+#: kv/screens/activity/diagrams/__init__.kv:77
+msgid ""
+"This is the calendar. It shows your cognitive activity for events, entered "
+"in your system calendar."
+msgstr ""
+"Это календарь. Он показывает твою когнитивную активность во время событий, "
+"отмеченных в твоем системном календаре."
+
+#: kv/screens/activity/diagrams/__init__.kv:71
+msgid "No calendar events found, please add some or check if they are visible"
+msgstr ""
+"В твоем календаре нет событий в ближайшее время, добавь что-то и проверь, "
+"что они видимы"
+
+#: kv/screens/activity/diagrams/__init__.kv:82
+msgid ""
+"This panel shows your current cognitive capacity in different activities."
+msgstr ""
+"Эта панель показывает твою текущую производительность в различных областях "
+"деятельности"
+
+#: kv/screens/activity/content.kv:8
+msgid "These are category buttons. You can choose activity category here"
+msgstr ""
+"Это кнопки категорий. С их помощью ты можешь выбрать категорию, по которой "
+"нужно показать статистику"
+
+#: kv/screens/activity/content.kv:23
+msgid "ALL"
+msgstr "ОБЩАЯ СТАТИСТИКА"
+
+#: kv/screens/activity/content.kv:165
+msgid "NOW"
+msgstr "СЕЙЧАС"
+
+#: kv/screens/activity/content.kv:165
+#, python-format
+msgid ""
+"\n"
+"[size=%s]how you perform right now in[/size]"
+msgstr ""
+"\n"
+"[size=%s]твоя производительность прямо сейчас в[/size]"
+
+#: kv/screens/activity/content.kv:171
+msgid "DAY"
+msgstr "ЧАСЫ"
+
+#: kv/screens/activity/content.kv:171
+#, python-format
+msgid ""
+"\n"
+"[size=%s]this is how you perform in concrete time of the day[/size]"
+msgstr ""
+"\n"
+"[size=%s]твоя производительность по часам[/size]"
+
+#: kv/screens/activity/content.kv:176
+msgid "WEEK"
+msgstr "ДНИ"
+
+#: kv/screens/activity/content.kv:176
+#, python-format
+msgid ""
+"\n"
+"[size=%s]how you perform in concrete week days[/size]"
+msgstr ""
+"\n"
+"[size=%s]твоя производительнсть по дням недели[/size]"
+
+#: kv/screens/activity/content.kv:181
+msgid "PROGRESS"
+msgstr "ПРОГРЕСС"
+
+#: kv/screens/activity/content.kv:181
+#, python-format
+msgid ""
+"\n"
+"[size=%s]how you progressed in last two weeks[/size]"
+msgstr ""
+"\n"
+"[size=%s]твой прогресс за последние две недели[/size]"
+
+#: kv/screens/activity/content.kv:186
+msgid "CALENDAR"
+msgstr "КАЛЕНДАРЬ"
+
+#: kv/screens/activity/content.kv:186
+#, python-format
+msgid ""
+"\n"
+"[size=%s]how you perform on upcoming appointments[/size]"
+msgstr ""
+"\n"
+"[size=%s]твоя производительность на грядущих встречах[/size]"
+
+#: kv/screens/activity/content.kv:202
+msgid ""
+"[b][size=20sp]RATE KOGNITIVO[/size][/b]\n"
+"It's the best way to support"
+msgstr ""
+"[b][size=25sp]ОЦЕНИТЕ KOGNITIVO[/size][/b]\n"
+"это лучший способ\n"
+"поддержать разработчиков"
+
+#: kv/screens/activity/content.kv:240
+msgid ""
+"Ask a question, propose a feature or just like kognitivo's \n"
+"[b][size=20sp]FACEBOOK[/size][/b]\n"
+"page. I appreciate your feedback!"
+msgstr ""
+"Задай вопрос, предложи фичу или просто лайкни нашу \n"
+"страницу на [b][size=20sp]FACEBOOK[/size][/b].\n"
+"Буду очень рад услышать ваше мнение!"
+
+#: kv/screens/tutorial.kv:14
+msgid "SURE!"
+msgstr "ОЙ, ПУСТЯКИ ^^"
+
+#: kv/screens/tutorial.kv:37
+msgid "[b]WELCOME![/b]"
+msgstr "[b]Добро пожаловать![/b]"
+
+#: kv/screens/tutorial.kv:40
+msgid ""
+"Thank you for downloading [b]KOGNITIVO[/b]! \n"
+"Please familarize yourself with [b][ref=terms]Terms and Conditions of Use[/"
+"ref][/b] and [b][ref=privacy]Privacy Policy[/ref][/b] and accept them"
+msgstr ""
+"Спасибо за загрузку [b]KOGNITIVO[/b]!\n"
+"Ознакомьтесь с [b][ref=terms]Условиями использования[/ref][/b] и [b]"
+"[ref=privacy]Политикой Конфиденциальности[/ref][/b] и примите их"
+
+#: kv/screens/tutorial.kv:45
+msgid "I ACCEPT"
+msgstr "Я ПРИНИМАЮ"
+
+#: kv/screens/tutorial.kv:59
+msgid "GOT IT!"
+msgstr "ПОНЯТНО!"
+
+#: kv/screens/tutorial.kv:72
+msgid "And now let's start your first test!"
+msgstr "Сейчас пришло время для твоего первого теста!"
+
+#: kv/screens/tutorial.kv:76
+msgid "I AM READY!"
+msgstr "ХОЧУ!"
+
+#: kv/screens/tutorial.kv:90
+msgid "[b]KOGNITIVO[/b] analyzes your mental activity through mini games!"
+msgstr "[b]KOGNITIVO[/b] изучает твою умственную активность с помощью мини-игр"
+
+#: kv/screens/tutorial.kv:93
+msgid "data/img/tutorial/categories.png"
+msgstr "data/img/tutorial/categories_ru.png"
+
+#: kv/screens/tutorial.kv:94
+msgid "Every mini game tests one of these base categories"
+msgstr "Каждая мини-игра тестирует одну-две из четырех базовых категорий"
+
+#: kv/screens/tutorial.kv:98
+msgid ""
+"In order to keep the statistics fresh and precise, keep using the app "
+"regularly. [b]KOGNITIVO[/b] will remind you about it"
+msgstr ""
+"Чтобы держать статистику точной и свежей, тесты нужно выполнять регулярно, "
+"KOGNITIVO напомнит тебе об этом в подходящее время"
+
+#: kv/screens/tutorial.kv:102
+msgid "There are 24 base mini games, more in extensions menu"
+msgstr "Всего есть 24 мини-игры, дополнительные - в разделе улучшений"
+
+#: kv/screens/tutorial.kv:106
+msgid "You can see your results in statistics menu"
+msgstr "Результаты исследований можно посмотреть в разделе статистики"
+
+#: kv/screens/purchases/content.kv:111
+#, python-format
+msgid "GET FOR ONLY %s"
+msgstr "КУПИТЬ ЗА %s"
+
+#: kv/screens/purchases/content.kv:117
+msgid "Thank you!"
+msgstr "Спасибище!"
+
+#: kv/screens/purchases/content.kv:137
+msgid "Internet connection problems, please try later."
+msgstr "Проблемы с интернетом, попробуй попозже."
+
+#: kv/screens/menu.kv:39
+msgid "EXTENSIONS"
+msgstr "УЛУЧШЕНИЯ"
+
+#: kv/screens/menu.kv:46
+msgid "MORE APPS"
+msgstr "ЕЩЕ ПРИЛОЖЕНИЯ"
+
+#: kv/screens/menu.kv:51
+msgid "ACHIEVEMENTS"
+msgstr "ДОСТИЖЕНИЯ"
+
+#: kv/screens/menu.kv:57
+msgid "BEST PLAYERS"
+msgstr "ЛУЧШИЕ ИГРОКИ"
+
+#: kv/screens/menu.kv:84
+msgid "QUICK TEST"
+msgstr "БЫСТРЫЙ ТЕСТ"
+
+#: kv/screens/menu.kv:92
+msgid "OVERVIEW"
+msgstr "СТАТИСТИКА"
+
+#: kv/screens/menu.kv:98
+msgid "TASKS"
+msgstr "ЗАДАЧИ"
+
+#: kv/settings_widget.kv:104
+#, python-format
+msgid ""
+"[b][size=%s]RATE KOGNITIVO[/size][/b]\n"
+"It's the best way to support"
+msgstr ""
+"[b][size=%s]ОЦЕНИТЕ KOGNITIVO[/size][/b]\n"
+"это лучший способ\n"
+"поддержать разработчиков"
+
+#: kv/task_widgets/find_in_table/find_symbol.kv:3
+#, python-format
+msgid "Find all [font=glyphicons]%s[/font]"
+msgstr "Найди все [font=glyphicons]%s[/font]"
+
+#: kv/task_widgets/find_in_table/find_symbol.kv:6
+msgid "Symbol Sherlock"
+msgstr "Поиск символов"
+
+#: kv/task_widgets/find_in_table/find_symbol.kv:7
+msgid ""
+"Find all entries\n"
+" of the symbol in the table"
+msgstr "Найди целевой символ в таблице"
+
+#: kv/task_widgets/find_in_table/find_letter.kv:2
+msgid "Letter Sherlock"
+msgstr "Поиск букв"
+
+#: kv/task_widgets/find_in_table/find_letter.kv:3
+msgid ""
+"Find all entries\n"
+" of the letter in the table"
+msgstr "Найди целевую букву в таблице"
+
+#: kv/task_widgets/find_in_table/find_contraveral.kv:2
+msgid "Contradictions"
+msgstr "Противоречия"
+
+#: kv/task_widgets/find_in_table/find_contraveral.kv:3
+msgid ""
+"Find all the words,\n"
+" respecting their color"
+msgstr "Найди все совпадения цветов и слов"
+
+#: kv/task_widgets/find_in_table/find_contraveral.kv:6
+msgid "Find all the right words"
+msgstr "Найди все совпадения"
+
+#: kv/task_widgets/find_in_table/find_number.kv:2
+msgid "Number Sherlock"
+msgstr "Поиск чисел"
+
+#: kv/task_widgets/find_in_table/find_number.kv:3
+msgid ""
+"Find all entries\n"
+" of the number in the table"
+msgstr "Найди целевое число в таблице"
+
+#: kv/task_widgets/find_in_table/find_in_table.kv:3
+#: kv/task_widgets/find_in_table_dynamic/find_in_table_dynamic.kv:3
+#, python-format
+msgid "Tap %s"
+msgstr "Жми %s"
+
+#: kv/task_widgets/find_in_table/find_color.kv:2
+msgid "Color Sherlock"
+msgstr "Поиск цветов"
+
+#: kv/task_widgets/find_in_table/find_color.kv:3
+msgid ""
+"Find all entries\n"
+" of the color in the table"
+msgstr "Найди целевой цвет в таблице"
+
+#: kv/task_widgets/find_in_table/find_color.kv:7
+#: kv/task_widgets/find_in_table_dynamic/find_color_dynamic.kv:7
+msgid "Find all"
+msgstr "Найди все"
+
+#: kv/task_widgets/white_squares.kv:9
+msgid "TAP THE SQUARES"
+msgstr "ЖМИ НА КВАДРАТ"
+
+#: kv/task_widgets/white_squares.kv:21
+msgid "Squares Hunt"
+msgstr "Охота на квадраты"
+
+#: kv/task_widgets/white_squares.kv:22
+msgid ""
+"Tap the squares!\n"
+" They are getting quicker!"
+msgstr "Жми на квадраты. Они становятся все быстрее!"
+
+#: kv/task_widgets/remember_sequence/number_sequence.kv:2
+msgid ""
+"Tap the numbers\n"
+" in the same order"
+msgstr "Нажми числа в том же порядке"
+
+#: kv/task_widgets/remember_sequence/number_sequence.kv:5
+msgid "Number Sequences"
+msgstr "Последовательности чисел"
+
+#: kv/task_widgets/remember_sequence/number_sequence.kv:6
+#: kv/task_widgets/remember_sequence/letter_sequence.kv:6
+#: kv/task_widgets/remember_sequence/symbol_sequence.kv:6
+#: kv/task_widgets/remember_sequence/color_sequence.kv:12
+msgid ""
+"Remember the sequence.\n"
+" It's quick gone!"
+msgstr "Запомни последовательность!"
+
+#: kv/task_widgets/remember_sequence/number_sequence.kv:9
+msgid "Remember the number sequence"
+msgstr "Запомни последовательность чисел"
+
+#: kv/task_widgets/remember_sequence/letter_sequence.kv:2
+msgid ""
+"Tap the letters\n"
+" in the same order"
+msgstr "Нажми буквы в том же порядке"
+
+#: kv/task_widgets/remember_sequence/letter_sequence.kv:5
+msgid "Letter Sequences"
+msgstr "Последовательности букв"
+
+#: kv/task_widgets/remember_sequence/letter_sequence.kv:9
+msgid "Remember the letters sequence"
+msgstr "Запомни последовательность букв"
+
+#: kv/task_widgets/remember_sequence/symbol_sequence.kv:2
+msgid ""
+"Tap the symbols\n"
+" in the same order"
+msgstr "Нажми символы в том же порядке"
+
+#: kv/task_widgets/remember_sequence/symbol_sequence.kv:5
+msgid "Symbols"
+msgstr "Символьные последовательности"
+
+#: kv/task_widgets/remember_sequence/symbol_sequence.kv:9
+msgid "Remember the symbol sequence"
+msgstr "Запомни последовательность символов"
+
+#: kv/task_widgets/remember_sequence/color_sequence.kv:2
+msgid "Remember the color sequence"
+msgstr "Запомни последовательность цветов, после нажми их в таком же порядке"
+
+#: kv/task_widgets/remember_sequence/color_sequence.kv:8
+msgid ""
+"Tap the colors\n"
+" in the same order"
+msgstr "Нажми цвета в той же последовательности"
+
+#: kv/task_widgets/remember_sequence/color_sequence.kv:11
+msgid "Colors"
+msgstr "Цветные последовательности"
+
+#: kv/task_widgets/find_in_table_dynamic/find_color_dynamic.kv:2
+msgid "Color Search"
+msgstr "Хаос цвета"
+
+#: kv/task_widgets/find_in_table_dynamic/find_color_dynamic.kv:3
+msgid ""
+"Tap the color,\n"
+" which is needed as soon as it appears in the table"
+msgstr "Жми целевой цвет, когда он появится в таблице"
+
+#: kv/task_widgets/find_in_table_dynamic/find_symbol_dynamic.kv:2
+msgid "Symbols Search"
+msgstr "Хаос символов"
+
+#: kv/task_widgets/find_in_table_dynamic/find_symbol_dynamic.kv:3
+msgid ""
+"Tap the symbol,\n"
+" which is needed as soon as it appears in the table"
+msgstr "Нажми целевой символ, когда он появится в таблице"
+
+#: kv/task_widgets/find_in_table_dynamic/find_symbol_dynamic.kv:7
+#, python-format
+msgid "Tap [font=glyphicons]%s[/font]"
+msgstr "Жми [font=glyphicons]%s[/font]"
+
+#: kv/task_widgets/find_in_table_dynamic/find_number_dynamic.kv:2
+msgid "Numbers search"
+msgstr "Хаос чисел"
+
+#: kv/task_widgets/find_in_table_dynamic/find_number_dynamic.kv:3
+msgid ""
+"Tap the number,\n"
+" which is needed as soon as it appears in the table"
+msgstr "Нажми целевое число, когда оно появится в таблице"
+
+#: kv/task_widgets/find_in_table_dynamic/find_letter_dynamic.kv:2
+msgid "Letter Search"
+msgstr "Хаос букв"
+
+#: kv/task_widgets/find_in_table_dynamic/find_letter_dynamic.kv:3
+msgid ""
+"Tap the letter,\n"
+" which is needed as soon as it appears in the table"
+msgstr "Нажми целевую букву, когда она появится в таблице"
+
+#: kv/task_widgets/tip_ball.kv:2
+msgid "Ball Hunt"
+msgstr "Поймай кружок!"
+
+#: kv/task_widgets/tip_ball.kv:3
+msgid "Hunt the ball!"
+msgstr "Жми на кружок, пока он не исчезнет!"
+
+#: kv/task_widgets/table_element/number_table.kv:2
+msgid "Number Tables"
+msgstr "Потерянные числа"
+
+#: kv/task_widgets/table_element/number_table.kv:3
+msgid ""
+"Remember the position of the numbers,\n"
+" select the correct one after hiding\n"
+" the content"
+msgstr "Запомни числа в таблице, затем выбери то, что было на месте \"?\""
+
+#: kv/task_widgets/table_element/symbol_table.kv:2
+msgid "Symbol Tables"
+msgstr "Потерянные символы"
+
+#: kv/task_widgets/table_element/symbol_table.kv:3
+msgid ""
+"Remember the position of the symbols,\n"
+"select the correct one after hiding\n"
+" the content"
+msgstr "Запомни символы в таблице, затем выбери тот, что был на месте \"?\""
+
+#: kv/task_widgets/table_element/letter_table.kv:2
+msgid "Letter Tables"
+msgstr "Потерянные буквы"
+
+#: kv/task_widgets/table_element/letter_table.kv:3
+msgid ""
+"Remember the position of the letter,\n"
+" select the correct one after hiding\n"
+" the content"
+msgstr "Запомни буквы в таблице, затем  выбери ту, что была на месте \"?\""
+
+#: kv/task_widgets/table_element/color_table.kv:2
+msgid "Color Tables"
+msgstr "Потерянные цвета"
+
+#: kv/task_widgets/table_element/color_table.kv:3
+msgid ""
+"Remember the position of the colors,\n"
+" select the correct one after hiding\n"
+" the content"
+msgstr "Запомни цвета в таблице, затем выбери тот, что был на месте \"?\""
+
+#: kv/task_widgets/calculation/numbers_calculation.kv:2
+msgid "Super Brain"
+msgstr "Супермозг"
+
+#: kv/task_widgets/calculation/time_subtraction.kv:3
+msgid ""
+"Subtract the interval of the\n"
+" right clock to the left one"
+msgstr "Вычти из времени слева интервал времени справа, выбери результат."
+
+#: kv/task_widgets/calculation/time_calculation.kv:2
+msgid "Time Machine"
+msgstr "Машина времени"
+
+#: kv/task_widgets/calculation/time_calculation.kv:3
+msgid ""
+"Add the interval of the\n"
+" right clock to the left one"
+msgstr "Прибавь ко времени слева интервал времени справа, выбери результат."
+
+#: kv/task_widgets/reverse_sequence/reverse_letters.kv:2
+msgid "Letter Reversions"
+msgstr "Переворот букв"
+
+#: kv/task_widgets/reverse_sequence/reverse_letters.kv:3
+msgid "Reverse the letter sequence"
+msgstr "Переверни последовательность букв"
+
+#: kv/task_widgets/reverse_sequence/reverse_numbers.kv:2
+msgid "Number Reversions"
+msgstr "Переворот цифр"
+
+#: kv/task_widgets/reverse_sequence/reverse_numbers.kv:3
+msgid "Reverse the number sequence"
+msgstr "Переверни последовательность цифр"
+
+#: kv/task_widgets/reverse_sequence/reverse_symbols.kv:2
+msgid "Symbol Reversions"
+msgstr "Переворот символов"
+
+#: kv/task_widgets/reverse_sequence/reverse_symbols.kv:3
+msgid "Reverse the symbols"
+msgstr "Переверни последовательность символов"
+
+#: kv/library_widgets.kv:131
+msgid "LOADING BRAINS..."
+msgstr "ЗАГРУЗКА МОЗГОВ..."
+
+#, fuzzy
+#~ msgid "ATTENTION FULL"
+#~ msgstr "ВНИМАНИЕ"
+
+#, fuzzy
+#~ msgid "MEMORY PREMIUM"
+#~ msgstr "КУПИТЬ ПРЕМИУМ"
+
+#~ msgid "TEST ANALYTICS NOW"
+#~ msgstr "ТЕСТИРОВАТЬ АНАЛИЗ"
+
+#~ msgid "TEST ATTENTION NOW"
+#~ msgstr "ТЕСТИРОВАТЬ ВНИМАНИЕ"
+
+#~ msgid "TEST REACTION NOW"
+#~ msgstr "ТЕСТИРОВАТЬ РЕАКЦИЮ"
+
+#~ msgid "TEST MEMORY NOW"
+#~ msgstr "ТЕСТИРОВАТЬ ПАМЯТЬ"
+
+#~ msgid "TEST NOW"
+#~ msgstr "НАЧАТЬ ТЕСТ"
+
+#~ msgid ""
+#~ "This is statistics panel. You can switch between different diagrams with "
+#~ "the buttons at the bottom side. At the beginning you don't have much data "
+#~ "to show, so it can look a bit boring"
+#~ msgstr ""
+#~ "Это панель статистики. Кнопки внизу переключают вид между разными видами "
+#~ "статистики. В самом начале показывать особо нечего, поэтому статистика "
+#~ "будет немного скучноватой"
+
+#~ msgid "Thank you for downloading [b]KOGNITIVO[/b]!"
+#~ msgstr "Спасибо за загрузку [b]KOGNITIVO[/b]!"
+
+#~ msgid "HELP"
+#~ msgstr "ПОМОЩЬ"
+
+#~ msgid "FEEDBACK"
+#~ msgstr "ВЫСКАЗАТЬСЯ"

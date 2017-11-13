@@ -1,0 +1,14 @@
+<resources>
+  <string name="app_id">349375144537</string>
+  <string name="achievement_faithful_comrade">CgkI2cSGw5UKEAIQAQ</string>
+  <string name="achievement_addicted">CgkI2cSGw5UKEAIQAg</string>
+  <string name="achievement_sergeant_cognitive">CgkI2cSGw5UKEAIQAw</string>
+  <string name="achievement_major_cognitive">CgkI2cSGw5UKEAIQBA</string>
+  <string name="achievement_lieutenant_cognitive">CgkI2cSGw5UKEAIQBQ</string>
+  <string name="achievement_colonel_cognitive">CgkI2cSGw5UKEAIQBg</string>
+  <string name="achievement_general_cognitive">CgkI2cSGw5UKEAIQBw</string>
+  <string name="achievement_curious">CgkI2cSGw5UKEAIQCA</string>
+  <string name="achievement_supporter">CgkI2cSGw5UKEAIQCQ</string>
+  <string name="achievement_social_contributor">CgkI2cSGw5UKEAIQCg</string>
+  <string name="leaderboard_league_of_brains">CgkI2cSGw5UKEAIQDw</string>
+</resources>

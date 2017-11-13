@@ -1,0 +1,6 @@
+ {
+    "sdk": "<SET_SDK_PATH>",
+    "genymotion_path": "<SET_GENYMOTION_PATH>",
+    "genymotion_device_id": "<SET_GENYMOTION_DEVICE_ID>",
+    "keystore_password": "<SET_KEYSTORE_PASSWORD>"
+}

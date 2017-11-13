@@ -1,0 +1,22 @@
+<WhiteSquare>
+    opacity: 0
+    text:""
+    animation: Animation(opacity=0, pos_hint={"center_y":0}, t="in_out_cubic", duration=.5)
+    background_color: settings.FILL_COLOR
+    size_hint: .2, .2
+
+<WhiteSquaresDescriptionWidget>
+    text: _("TAP THE SQUARES")
+    pos_hint: {'top': 1.}
+    font_size: isp(20)
+    bold: True
+    height: 10
+    size_hint: (1., .05)
+
+<WhiteSquaresAnswerWidget>
+    spacing: (dp(10), dp(10))
+    size_hint_y: .4
+
+<IntroHintWhiteSquares>:
+    title: _("Squares Hunt")
+    description: _("Tap the squares!\n They are getting quicker!")

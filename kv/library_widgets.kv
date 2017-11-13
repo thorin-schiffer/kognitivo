@@ -1,0 +1,158 @@
+#:import _ utils._
+#:import settings settings
+<OnPressBlinkMixin>:
+    animation: Animation(opacity=0.5, duration=.1, t='in_quad') + Animation(opacity=1, duration=0.1, t='in_quad')
+
+<CircleDiagram>:
+    label: label
+    color: settings.FILL_COLOR_SEMITRANSPARENT
+    duration: 5
+    transition: 'out_elastic'
+    Label:
+        id: label
+        pos_hint: {"center_x": .5, "center_y": .5}
+        size_hint: (1., 1.)
+        font_size: isp(20)
+        bold: True
+
+<MarkRedMixin>:
+    canvas.after:
+        Color:
+            rgba: (1,0,0,.5)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+<OkCancelPopup>:
+    title: " "
+    separator_color: 0, 0, 0, 0
+    title_size: 0
+    size_hint: .8, .3
+    pos_hint: {"center_x": .5, "center_y": .5}
+    ok_button: ok_button
+    cancel_button: cancel_button
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            halign: "center"
+            text: root.text
+            markup: True
+            size_hint_y: .8
+            text_size: self.size
+            valign: "middle"
+        BoxLayout:
+            size_hint: .6, .2
+            spacing: '10dp'
+            pos_hint: {"center_x": .5}
+            Button:
+                text: u"[font=glyphicons]\uE014[/font]"
+                on_press: root.cancel_callback()
+                background_color: settings.FILL_COLOR_SEMITRANSPARENT
+                border: 0, 0, 0, 0
+                markup: True
+                id: cancel_button
+            Button:
+                text: u"[font=glyphicons]\uE013[/font]"
+                on_press: root.ok_callback()
+                markup: True
+                id: ok_button
+
+<OkPopup>:
+    title: " "
+    separator_color: 0, 0, 0, 0
+    title_size: 0
+    size_hint: .8, .6
+    pos_hint: {"center_x": .5, "center_y": .5}
+    ok_button: ok_button
+    BoxLayout:
+        orientation: "vertical"
+        Image:
+            source: "data/success.png"
+        Label:
+            halign: "center"
+            text: root.text
+            markup: True
+            size_hint_y: .8
+            text_size: self.size
+            valign: "middle"
+            font_size: isp(18)
+        BoxLayout:
+            size_hint: .6, .2
+            spacing: '10dp'
+            pos_hint: {"center_x": .5}
+            Button:
+                text: u"[font=glyphicons]\uE013[/font]"
+                on_press: (root.ok_callback or root.dismiss)()
+                background_color: settings.FILL_COLOR
+                border: 0, 0, 0, 0
+                markup: True
+                id: ok_button
+
+
+<CrashPopup>:
+    title: " "
+    separator_color: 0, 0, 0, 0
+    title_size: 0
+    size_hint: .8, .8
+    pos_hint: {"center_x": .5, "center_y": .5}
+    BoxLayout:
+        orientation: "vertical"
+        Image:
+            source: "data/crash.png"
+        Label:
+            halign: "center"
+            text: root.text
+            markup: True
+            size_hint_y: .5
+            text_size: self.size
+            valign: "middle"
+            font_size: isp(18)
+        Label:
+            text: "If problem persists please contact the developer"
+            bold: True
+            size_hint_y: .2
+        BoxLayout:
+            size_hint: .6, .2
+            spacing: '10dp'
+            pos_hint: {"center_x": .5}
+            Button:
+                text: u"OK :("
+                on_press: root.ok_callback()
+                markup: True
+
+<LoadingWidget>:
+    orientation: "vertical"
+    size_hint: (1., .3)
+    pos_hint: {"center_x": .5, "center_y": .5}
+    icon: "atlas://data/atlas/menu/reaction"
+    Image:
+        source: root.icon
+    Label:
+        text: _("LOADING BRAINS...")
+    DidYouKnowLabel:
+        size_hint_x: .9
+        pos_hint: {"center_x": .5}
+
+<PngAnimator>:
+    allow_stretch: True
+
+
+<DidYouKnowLabel>:
+    markup: True
+    size_hint_x: 1
+    text_size: self.size
+    halign: 'center'
+    valign: 'middle'
+
+
+<-TutorialContentWidget>:
+    label: label
+    size_hint: self.point_widget.tutorial_size or (.5, .5)
+    pos_hint: self.point_widget.tutorial_position or {"center_x": .5, "center_y": .5}
+    Label:
+        id: label
+        color: 1, 1, 1, 0
+        text_size: self.size
+        halign: 'center'
+        valign: 'middle'
+        text: root.point_widget.tutorial_text or "TUTORIAL TEXT NOT SET"

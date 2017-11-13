@@ -1,0 +1,21 @@
+<RemainBarWidget>:
+    size_hint: (0.5, 0.05)
+    pos_hint: {"center_x":0.5, "center_y": 1}
+    canvas.before:
+        Color:
+            rgba: settings.FILL_COLOR_SEMITRANSPARENT
+        Rectangle:
+            pos: (self.x + self.height / 2, self.y + self.height * .05)
+            size: (self.width - self.height if self.width > self.height else 0, self.height * .9)
+        Ellipse:
+            pos: (self.x, self.y + self.height * .05)
+            size: (self.height if self.width > self.height else 0, self.height * .9)
+            angle_start: -180
+            angle_end: 0
+            segments: 45
+        Ellipse:
+            pos: (self.x + self.width - self.height, self.y + self.height * .05)
+            size: (self.height if self.width > self.height else 0, self.height * .9)
+            angle_start: 0
+            angle_end: 180
+            segments: 45

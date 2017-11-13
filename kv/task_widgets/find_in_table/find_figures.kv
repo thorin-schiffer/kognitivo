@@ -1,0 +1,23 @@
+<IntroHintFindFigures>:
+    title: _("Figure Out")
+    description: _("Find all correctly named figures")
+
+<FindFiguresDescriptionWidget>:
+    text: _("Find all correctly named figures")
+
+<FindFiguresAnswerWidget>:
+    spacing: dp(30)
+
+<FindFiguresAnswerButton>:
+    text_size: self.size
+    font_size: "11sp"
+    valign: "middle"
+    halign: "center"
+    markup: True
+    color: (1,1,1,1)
+    use_color: False
+    canvas.before:
+        Rectangle:
+            texture: self.icon.texture if self.icon else None
+            pos: (self.pos[0] + self.width/2 - min(self.size)/2, self.pos[1] + self.height/2 - min(self.size)/2)
+            size: (min(self.size), min(self.size))

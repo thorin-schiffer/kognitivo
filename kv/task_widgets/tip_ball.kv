@@ -1,0 +1,15 @@
+<TipBallIntroHint>:
+    title: _("Ball Hunt")
+    description: _("Hunt the ball!")
+
+<-Ball>:
+    size_hint: (self.radius, self.radius)
+    pos_hint: {"center_x": .5, "center_y": .5}
+    transition: 'in_out_elastic'
+    canvas.before:
+        Color:
+            rgba: self.color
+        Ellipse:
+            size: (min(self.size), min(self.size))
+            pos: self.pos
+            segments: 45

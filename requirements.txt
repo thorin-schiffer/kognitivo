@@ -1,0 +1,10 @@
+pytest
+pytest-xdist
+execnet==1.1
+raven==6.3.0
+logcat-color
+invoke==0.21.0
+termcolor
+pytest-mock
+flake8
+jnius=1.1.0

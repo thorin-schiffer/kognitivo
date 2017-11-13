@@ -1,0 +1,17 @@
+<TableCellMixin>:
+    font_size: isp(30)
+    animation: Animation(opacity=0, d=.5, t='in_quad')
+
+<TableCellWidget>:
+    color: settings.TEXT_COLOR
+
+<TableElementDescriptionWidget>:
+    table: table
+    orientation: 'vertical'
+    padding: (0,0,0,dp(30))
+    GridLayout:
+        id: table
+        padding: (0, dp(30), 0, dp(30))
+        rows: root.table_size
+        cols: root.table_size
+        spacing: (dp(10), dp(10))

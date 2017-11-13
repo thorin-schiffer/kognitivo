@@ -1,0 +1,142 @@
+#:import settings settings
+#:import Animation kivy.animation.Animation
+#:import isp utils.isp
+#:import _ utils._
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import App kivy.app.App
+
+<-MenuButtonTitled>:
+    background_color: settings.FILL_COLOR
+    color: settings.TEXT_COLOR
+    label: label.__self__
+    text: ""
+    animation: Animation(opacity=0.5, duration=.1, t='in_quad') + Animation(opacity=1, duration=0.1, t='in_quad')
+    font_size: isp(13)
+    image_pos: 'right'
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            pos: (self.x, self.y + self.height * .05)
+            size: (self.width - self.height / 2 if self.width > self.height else 0, self.height * .9)
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            texture: self.texture
+            size: (self.height * root.image_scale, self.height * root.image_scale)
+            pos: (self.pos[0] + self.width - self.height * root.image_scale, self.pos[1] + (1 - root.image_scale)/2 * self.height) if self.image_pos == 'right' else (self.pos[0] + self.width/2 - root.image_scale*self.height/2, self.pos[1] + (1 - root.image_scale)/2 * self.height)
+    Label:
+        id: label
+        text: root.text
+        color: root.color
+        pos: root.pos
+        size: root.size
+        bold: True
+        font_size: root.font_size
+
+<PurchaseButton>:
+    source: "atlas://data/atlas/menu/buy"
+    text: _("EXTENSIONS")
+    background_color: get_color_from_hex("b5b5f8ff")
+    point_screen: 'purchases'
+
+<MoreAppsButton>:
+    source: "atlas://data/atlas/menu/google_play_badge"
+    on_press: App.get_running_app().tracker.send_event('clicks', 'menu', 'more_apps'); import webbrowser; webbrowser.open(settings.MORE_APPS_URL); App.get_running_app().google_client.unlock_achievement("supporter")
+    text: _("MORE APPS")
+    background_color: get_color_from_hex("b5b5f8ff")
+
+<GooglePlayAchievementsButton>:
+    source: "atlas://data/atlas/menu/gplay_achievements"
+    text: _("ACHIEVEMENTS")
+    on_connect: App.get_running_app().google_client.show_achievements()
+    background_color: get_color_from_hex("b5b5f8ff")
+
+<GooglePlayLeaderboardButton>:
+    source: "atlas://data/atlas/menu/leaderboard"
+    text: _("BEST PLAYERS")
+    on_connect: App.get_running_app().google_client.show_leaderboard(settings.LEADERBOARD)
+    background_color: get_color_from_hex("b2ff84ff")
+
+<Menu>:
+    buttons_container: buttons_container
+    quick_test_button: quick_test_button
+    overview_button: overview
+    setting_button: settings_button
+    feedback_button: feedback_button
+    tasks_button: tasks
+    more_apps_button: more_apps_button
+    help_button: help
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'vertical'
+        RelativeLayout:
+            BoxLayout:
+                size_hint_y: .7
+                pos_hint: {'top': 1}
+                orientation: 'vertical'
+                spacing: '5dp'
+                id: buttons_container
+                padding: ('0dp', '10dp', '5dp', '10dp')
+                MenuButtonTitled:
+                    id: quick_test_button
+                    source: "atlas://data/atlas/menu/quick_test"
+                    text: _("QUICK TEST")
+                    point_screen: "tasks"
+                    background_color: get_color_from_hex("80d6efff")
+                    on_press: tasks = App.get_running_app().manager.get_screen('tasks'); tasks.quick_test = True
+                MenuButtonTitled:
+                    id: overview
+                    source: "atlas://data/atlas/menu/stats"
+                    point_activity: None
+                    text: _("OVERVIEW")
+                    background_color: get_color_from_hex("ffcba9ff")
+                MenuButtonTitled:
+                    id: tasks
+                    source: "atlas://data/atlas/menu/tasks"
+                    point_screen: 'tasks'
+                    text: _("TASKS")
+                    background_color: get_color_from_hex("b2ff84ff")
+                    on_press: tasks = App.get_running_app().manager.get_screen('tasks'); tasks.quick_test = False; tasks.main_manager.current = 'task_sets'
+                MoreAppsButton:
+                    id: more_apps_button
+        BoxLayout:
+            size_hint_y: .1
+            padding: dp(20), dp(10), dp(20), dp(10)
+            MenuButtonTitled:
+                id: help
+                source: "atlas://data/atlas/menu/help"
+                point_screen: 'tutorial'
+                background_color: 0, 0, 0, 0
+                image_pos: 'center'
+            SettingsButton:
+                id: settings_button
+                source: "atlas://data/atlas/menu/settings_icon"
+                background_color: 0, 0, 0, 0
+                image_pos: 'center'
+            MenuButtonTitled:
+                id: feedback_button
+                source: "atlas://data/atlas/menu/facebook_badge"
+                on_press: App.get_running_app().tracker.send_event('clicks', 'menu', 'facebook_badge'); import webbrowser; webbrowser.open(settings.FACEBOOK_PAGE_URL);App.get_running_app().google_client.unlock_achievement("social_contributor")
+                background_color: 0, 0, 0, 0
+                image_pos: 'center'
+
+<KognitivoNavigator>:
+    side_panel_opacity: 0
+    top_panel: 'side'
+    main_panel_darkness: .8
+    side_panel_darkness: 0
+    side_panel_init_offset: .8
+    state: 'open'
+    Menu
+
+<MenuToggleButton>:
+    opacity: 0
+    size_hint_y: .05
+    pos_hint: {"left": 0, "top": 1}
+    anchor_x: 'left'
+    ImageButton:
+        size_hint_x: root.height/root.width
+        source: 'data/img/buttons/menu_toggler.png'
+        on_press: App.get_running_app().root.toggle_state()
+        allow_stretch: True

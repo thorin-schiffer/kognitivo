@@ -1,0 +1,12 @@
+# Width of the TAG column, default is 20
+tag_width = 20
+
+# Width of the PID column, default is 8
+pid_width = 8
+
+# Width of priority (log level) column, default is 3
+priority_width = 3
+
+# Whether or not to wrap the message inside a column. Setting this to False
+# enables easier copy/paste. default is True
+wrap = False

@@ -1,0 +1,132 @@
+#:import transition kivy.uix.screenmanager.NoTransition
+#:import KIVY_DEFAULT_FONT settings.KIVY_DEFAULT_FONT
+#:import settings settings
+#:import _ utils._
+#:import isp utils.isp
+#:import Animation kivy.animation.Animation
+#:import get_hex_from_color kivy.utils.get_hex_from_color
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import App kivy.app.App
+
+
+<Label>:
+    font_name: KIVY_DEFAULT_FONT
+    color: settings.TEXT_COLOR
+    font_size: isp(14)
+    name: ""
+
+<-ModalView>:
+    background_color: settings.FILL_COLOR_QUASITRANSPARENT
+    canvas:
+        Color:
+            rgba: self.background_color[:3] + [root.background_color[-1] * self._anim_alpha]
+        Rectangle:
+            size: self._window.size if self._window else (0, 0)
+        Color:
+            rgb: 1, 1, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+<-ModalView>:
+    canvas:
+        Color:
+            rgba: 1, 1, 1, .95
+        Rectangle:
+            size: self._window.size if self._window else (0, 0)
+
+<Popup>:
+    _container: container
+    title_color: settings.TEXT_COLOR
+    separator_color: settings.FILL_COLOR
+    title_align: "center"
+
+    GridLayout
+        padding: dp(12)
+        cols: 1
+        size_hint: None, None
+        pos: root.pos
+        size: root.size
+
+        Label:
+            text: _(root.title)
+            color: root.title_color
+            halign: root.title_align
+            size_hint_y: None
+            height: self.texture_size[1] + 16
+            text_size: self.width - 16, None
+            font_size: root.title_size
+            bold: True
+        Widget:
+            size_hint_y: None
+            height: 4
+            canvas:
+                Color:
+                    rgba: root.separator_color
+                Rectangle:
+                    pos: self.x, self.y + root.separator_height / 2.
+                    size: self.width, root.separator_height
+        BoxLayout:
+            id: container
+
+
+<-Button>:
+    state_image: ''
+    disabled_image: ''
+    background_color: settings.FILL_COLOR
+    background_color_down: settings.TEXT_COLOR
+    color: 1, 1, 1, 1
+    canvas.after:
+        Color:
+            rgba: self.background_color if self.state == 'normal' or not self.background_color_down else self.background_color_down
+        Rectangle:
+            pos: (self.x + self.height / 2, self.y + self.height * .05)
+            size: (self.width - self.height if self.width > self.height else 0, self.height * .9)
+        Ellipse:
+            pos: (self.x, self.y + self.height * .05)
+            size: (self.height if self.width > self.height else 0, self.height * .9)
+            angle_start: -180
+            angle_end: 0
+            segments: 45
+        Ellipse:
+            pos: (self.x + self.width - self.height, self.y + self.height * .05)
+            size: (self.height if self.width > self.height else 0, self.height * .9)
+            angle_start: 0
+            angle_end: 180
+            segments: 45
+        Color:
+            rgba: self.disabled_color if self.disabled else self.color
+        Rectangle:
+            texture: self.texture
+            size: self.texture_size
+            pos: int(self.center_x - self.texture_size[0] / 2.), int(self.center_y - self.texture_size[1] / 2.)
+
+<Screen>:
+    background_color: 1, 1, 1, 1
+    canvas:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<ScreenManager>:
+    background_color: 1, 1, 1, 1
+    canvas:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+<RootManager>:
+    transition: transition()
+
+    canvas.after:
+        Color:
+            rgba: (0, 0, 0, 1) if self.stats_label else (0, 0, 0, 0)
+        Rectangle:
+            texture: self.stats_label.texture if self.stats_label else None
+            size: dp(400), dp(200)
+            pos: 0, root.height - dp(200)

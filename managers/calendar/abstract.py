@@ -1,0 +1,2 @@
+class AbstractCalendarManager(object):
+    pass

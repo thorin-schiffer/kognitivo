@@ -1,0 +1,261 @@
+#:import settings settings
+#:import App kivy.app.App
+#:import isp utils.isp
+#:import _ utils._
+
+<FilterPanel>
+    buttons: [analytics_button, attention_button, general_button, reaction_button, memory_button]
+    tutorial_text: _("These are category buttons. You can choose activity category here")
+    tutorial_position: {"center_x": .5, "center_y": .2}
+    orientation: "vertical"
+    pos_hint: {"x": 1, "center_y": .5}
+    size_hint: .2, .3
+    BoxLayout:
+        orientation: "vertical"
+        spacing: dp(10)
+        padding: dp(10)
+        FilterButton:
+            filter_panel: root
+            source: "atlas://data/atlas/activity/general"
+            family: None
+            id: general_button
+            on_press: App.get_running_app().tracker.send_event('clicks', 'activity', 'general')
+            text: _("ALL")
+        FilterButton:
+            filter_panel: root
+            source: "atlas://data/atlas/menu/analytics"
+            family: settings.ANALYTICS_FAMILY
+            background_color: settings.ACTIVITY_COLORS[settings.ANALYTICS_FAMILY]
+            id: analytics_button
+            on_press: App.get_running_app().tracker.send_event('clicks', 'activity', 'analytics')
+            text: _("ANALYTICS")
+        FilterButton:
+            filter_panel: root
+            source: "atlas://data/atlas/menu/attention"
+            family: settings.ATTENTION_FAMILY
+            background_color: settings.ACTIVITY_COLORS[settings.ATTENTION_FAMILY]
+            id: attention_button
+            on_press: App.get_running_app().tracker.send_event('clicks', 'activity', 'attention')
+            text: _("ATTENTION")
+        FilterButton:
+            filter_panel: root
+            source: "atlas://data/atlas/menu/reaction"
+            family: settings.REACTION_FAMILY
+            background_color: settings.ACTIVITY_COLORS[settings.REACTION_FAMILY]
+            id: reaction_button
+            on_press: App.get_running_app().tracker.send_event('clicks', 'activity', 'reaction')
+            text: _("REACTION")
+        FilterButton:
+            filter_panel: root
+            source: "atlas://data/atlas/menu/memory"
+            family: settings.MEMORY_FAMILY
+            background_color: settings.ACTIVITY_COLORS[settings.MEMORY_FAMILY]
+            id: memory_button
+            on_press: App.get_running_app().tracker.send_event('clicks', 'activity', 'memory')
+            text: _("MEMORY")
+
+<-FilterButton>
+    on_press: App.get_running_app().sounds['tap'].play()
+    background_color: settings.FILL_COLOR
+    color: 1, 1, 1, 1
+    label: label.__self__
+    text: ""
+    animation: Animation(opacity=0.5, duration=.1, t='in_quad') + Animation(opacity=1, duration=0.1, t='in_quad')
+    font_size: isp(13)
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            pos: (self.x + self.height * root.image_scale/2, self.y)
+            size: (self.width if self.width > self.height else 0, self.height)
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            texture: self.texture
+            size: (self.height * root.image_scale, self.height * root.image_scale)
+            pos: (self.pos[0], self.pos[1] + (1 - root.image_scale)/2 * self.height)
+    Label:
+        id: label
+        text: root.text
+        color: root.color
+        pos: root.pos
+        size: root.size
+        bold: True
+        font_size: root.font_size
+
+<FilledLineStatsDiagram>:
+    labels_bar_hint: .1
+
+<StartNowButton>
+    pos_hint: {'center_x': 0.5}
+    label: label
+    Label:
+        id: label
+        pos_hint: {"center_x": .5, "center_y": .5}
+        size_hint: 1, 1
+        color: 1, 1, 1
+        bold: True
+        font_size: isp(20)
+
+<DiagramsTabbedPanelItem>:
+    disabled_color: settings.TEXT_COLOR_SEMITRANSPARENT
+    on_state: self.color = (1, 1, 1, 1) if args[1] == 'down' else settings.TEXT_COLOR
+    background_color: 0, 0, 0, 0
+    background_color_down: settings.FILL_COLOR
+    color: settings.TEXT_COLOR
+    container: container.__self__
+    font_size: isp(18)
+    font_name: "glyphicons"
+    title: ""
+    filterable: True
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            size_hint_y: .2
+            text: root.title
+            bold: True
+            font_size: isp(20)
+            markup: True
+            text_size: self.size
+            halign: "center"
+            valign: "middle"
+        BoxLayout:
+            padding: (dp(10), 0, dp(10), 0)
+            id: container
+
+<DiagramsTabbedPanel@TabbedPanel>:
+    do_default_tab: False
+    background_color: (0,0,0,0)
+    border: (0,0,0,0)
+    background_image: ""
+    tab_pos: 'bottom_mid'
+    spacing: dp(10)
+    tab_width: dp(70)
+
+<FilterToggleButton>:
+    opacity: 0
+    size_hint_y: .05
+    pos_hint: {"right": 1, "top": 1}
+    anchor_x: 'right'
+    ImageButton:
+        size_hint_x: root.height/root.width
+        source: 'atlas://data/atlas/activity/filter_toggler'
+        on_press: root.open_filter()
+        allow_stretch: True
+
+<StatsPanel>:
+    title: "?"
+    filter_panel: filter_panel
+    tab_panel: diagrams
+    day_tab: day_tab
+    week_tab: week_tab
+    progress_tab: progress_tab
+    calendar_tab: calendar_tab
+    now_tab: now_tab
+    FilterToggleButton:
+        id: filter_toggle
+    DiagramsTabbedPanel:
+        default_tab: now_tab
+        id: diagrams
+        on_current_tab: args[1].diagram.update(); filter_toggle.hide() if not args[1].filterable else filter_toggle.show()
+        padding: 0, 0, 0, dp(15)
+        ActivityStatsTabbedPanelItem:
+            id: now_tab
+            text: u"\u231b"
+            title: _("NOW") + _("\n[size=%s]how you perform right now in[/size]") % int(isp(14))
+            on_press: App.get_running_app().tracker.send_event('clicks', 'activity', 'now_tab')
+            filterable: False
+        DaysStatsTabbedPanelItem:
+            id: day_tab
+            text: u"\uE023"
+            title: _('DAY') + _("\n[size=%s]this is how you perform in concrete time of the day[/size]") % int(isp(14))
+            on_press: App.get_running_app().tracker.send_event('clicks', 'activity', 'day_tab')
+        WeekStatsTabbedPanelItem:
+            id: week_tab
+            text: u"\uE012"
+            title: _('WEEK') + _("\n[size=%s]how you perform in concrete week days[/size]") % int(isp(14))
+            on_press: App.get_running_app().tracker.send_event('clicks', 'activity', 'week_tab')
+        ProgressStatsTabbedPanelItem:
+            id: progress_tab
+            text: u"\uE185"
+            title: _('PROGRESS') + _("\n[size=%s]how you progressed in last two weeks[/size]") % int(isp(14))
+            on_press: App.get_running_app().tracker.send_event('clicks', 'activity', 'progress_tab')
+        CalendarStatsTabbedPanelItem:
+            id: calendar_tab
+            text: u"\uE109"
+            title: _("CALENDAR") + _("\n[size=%s]how you perform on upcoming appointments[/size]") % int(isp(14))
+            on_press: App.get_running_app().tracker.send_event('clicks', 'activity', 'calendar_tab')
+    FilterPanel:
+        id: filter_panel
+        size_hint_x: .50
+
+<RatePopup>:
+    title: " "
+    separator_color: 0, 0, 0, 0
+    title_size: 0
+    size_hint: .8, .4
+    pos_hint: {"center_x": .5, "center_y": .5}
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            halign: "center"
+            text: _("[b][size=20sp]RATE KOGNITIVO[/size][/b]\nIt's the best way to support")
+            markup: True
+            size_hint_y: .3
+        Label:
+            text: u"[size=30sp]\uE006[/size]" * 5
+            font_name: "glyphicons"
+            color: settings.FILL_COLOR
+            halign: "center"
+            markup: True
+        BoxLayout:
+            size_hint: .8, .2
+            spacing: '10dp'
+            pos_hint: {"center_x": .5}
+            Button:
+                text: u"[font=glyphicons]\uE014[/font]"
+                on_press: root.store_feedback(False);root.dismiss()
+                background_color: settings.FILL_COLOR_SEMITRANSPARENT
+                border: 0, 0, 0, 0
+                markup: True
+            Button:
+                text: u"[font=glyphicons]\uE013[/font]"
+                on_press: import webbrowser; webbrowser.open(settings.STORE_URL);root.store_feedback(True);root.dismiss()
+                markup: True
+
+
+<LikePopup>:
+    title: " "
+    separator_color: 0, 0, 0, 0
+    title_size: 0
+    size_hint: .8, .4
+    pos_hint: {"center_x": .5, "center_y": .5}
+    BoxLayout:
+        orientation: "vertical"
+        Image:
+            source: "atlas://data/atlas/activity/facebook_like"
+            size_hint_y: .3
+        Label:
+            halign: "center"
+            text: _("Ask a question, propose a feature or just like kognitivo's \n[b][size=20sp]FACEBOOK[/size][/b]\npage. I appreciate your feedback!")
+            markup: True
+            size_hint_y: .5
+            size_hint_x: 1.
+            text_size: self.width, None
+            font_size: isp(13)
+        BoxLayout:
+            spacing: '15dp'
+            size_hint: .8, .2
+            pos_hint: {"center_x": .5}
+            Button:
+                text: u"[font=glyphicons]\uE014[/font]"
+                on_press: root.store_feedback(False);root.dismiss()
+                background_color: settings.FILL_COLOR_SEMITRANSPARENT
+                border: 0, 0, 0, 0
+                markup: True
+            Button:
+                text: u"[font=glyphicons]\uE013[/font]"
+                on_press: import webbrowser; webbrowser.open(settings.FACEBOOK_PAGE_URL);root.store_feedback(True);root.dismiss()
+                markup: True
+
+

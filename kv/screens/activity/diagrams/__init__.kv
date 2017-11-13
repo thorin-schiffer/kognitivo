@@ -1,0 +1,193 @@
+<DiagramXLabel>:
+    markup: True
+    canvas.before:
+        PushMatrix
+        Rotate:
+            angle: 90
+            origin: (self.x + self.width/2, self.y + self.height/2)
+    canvas.after:
+        PopMatrix
+
+<Diagram>
+    orientation: "vertical"
+
+<ActivityDayStats>:
+    elements_container: elements_container.__self__
+    labels_container: labels_container.__self__
+    tutorial_text: _("This is the hour activity diagram. At the bottom side is the time of the day and the bars show your activity level in percents")
+    tutorial_position: {"top" : 1}
+    tutorial_size: .8, .1
+    BarDiagramElementsContainer:
+        spacing: dp(8)
+        size_hint_y: .8
+        id: elements_container
+    HourDiagramLabelsContainer:
+        size_hint_y: .2
+        id: labels_container
+
+<ActivityWeekStats>:
+    elements_container: elements_container.__self__
+    labels_container: labels_container.__self__
+    tutorial_text: _("This is week day activity diagram. At the bottom side is the week day and the bars show your activity level in percents")
+    tutorial_position: {"top" : 1}
+    tutorial_size: .8, .1
+    BarDiagramElementsContainer:
+        spacing: dp(8)
+        size_hint_y: .8
+        id: elements_container
+    WeekDiagramLabelsContainer:
+        size_hint_y: .2
+        id: labels_container
+
+<ProgressStats>:
+    elements_container: elements_container.__self__
+    labels_container: labels_container.__self__
+    tutorial_text: _("This is progress diagram. At the bottom side is the date, the graph shows your activity of last two weeks in percents")
+    tutorial_position: {"top" : 1}
+    tutorial_size: .8, .1
+
+    FilledLineDiagramElementsContainer:
+        spacing: dp(8)
+        size_hint_y: .8
+        id: elements_container
+    ProgressDiagramLabelsContainer:
+        size_hint_y: .2
+        id: labels_container
+
+<ListStats>:
+    do_scroll_x: False
+    tutorial_text: _("This is the calendar. It shows your cognitive activity for events, entered in your system calendar.")
+    tutorial_position: {"top" : 1}
+    tutorial_size: .8, .2
+    container: container.__self__
+    height: self.parent.height if self.parent else dp(100)
+    BoxLayout:
+        id: container
+        size_hint_y: None
+        orientation: 'vertical'
+        spacing: dp(10)
+        on_children: self.height=len(self.children) * self.children[0].height + self.spacing * len(self.children)
+        Label:
+            text: _("No calendar events found, please add some or check if they are visible")
+            text_size: self.size
+            halign: 'center'
+            valign: 'middle'
+
+<CalendarStats>:
+    tutorial_text: _("This is the calendar. It shows your cognitive activity for events, entered in your system calendar.")
+    tutorial_position: {"top" : 1}
+    tutorial_size: .8, .1
+
+<ActivityStats>:
+    tutorial_text: _("This panel shows your current cognitive capacity in different activities.")
+    tutorial_position: {"top" : 1}
+    tutorial_size: .8, .1
+
+
+<EfficiencyBar>:
+    label: label.__self__
+    canvas.before:
+        Color:
+            rgba: self._back_color
+        Rectangle:
+            pos: (self.x + self.height / 2, self.y + self.height * .05)
+            size: (self.width - self.height if self.width > self.height else 0, self.height * .9)
+        Ellipse:
+            pos: (self.x, self.y + self.height * .05)
+            size: (self.height if self.width > self.height else 0, self.height * .9)
+            angle_start: -180
+            angle_end: 0
+            segments: 45
+        Ellipse:
+            pos: (self.x + self.width - self.height, self.y + self.height * .05)
+            size: (self.height if self.width > self.height else 0, self.height * .9)
+            angle_start: 0
+            angle_end: 180
+            segments: 45
+        Color:
+            rgba: self._fill_color
+        Rectangle:
+            pos: (self.x + self.height / 2, self.y + self.height * .05)
+            size: ((self.width - self.height) * min(self.percentage, 1.) if self.width > self.height else 0, self.height * .9)
+        Ellipse:
+            pos: (self.x, self.y + self.height * .05)
+            size: (self.height if self.width > self.height else 0, self.height * .9)
+            angle_start: -180
+            angle_end: 0
+            segments: 45
+        Ellipse:
+            pos: (self.x + (self.width - self.height) * min(self.percentage, 1.), self.y + self.height * .05)
+            size: (self.height if self.width > self.height else 0, self.height * .9)
+            angle_start: 0
+            angle_end: 180
+            segments: 45
+    Label:
+        id: label
+        color: 1, 1, 1, 1
+        bold: True
+        font_size: isp(16)
+
+<CalendarStatsEntry>:
+    height: dp(70)
+    size_hint_y: None
+    size_hint_x: 1
+    efficiency_bar: efficiency_bar.__self__
+    AnchorLayout:
+        size_hint_x: .3
+        BoxLayout:
+            size_hint_y: .8
+            orientation: 'vertical'
+            Label:
+                text: root.begin.strftime("%d ").upper() + _(root.begin.strftime("%b").upper())
+                font_size: isp(18)
+                bold: True
+                text_size: self.size
+                halign: 'center'
+                valign: 'bottom'
+                color: root.calendar_color
+            Label:
+                text: root.begin.strftime("%H:%M") if not root.all_day else ""
+                text_size: self.size
+                halign: 'center'
+                valign: 'top'
+                color: root.calendar_color
+    BoxLayout:
+        orientation: 'vertical'
+        padding: dp(10)
+        spacing: dp(5)
+        Label:
+            size_hint_y: .4
+            text: root.title
+            font_size: isp(18)
+            bold: True
+        EfficiencyBar:
+            id: efficiency_bar
+            size_hint: 1, .6
+            percentage: root.efficiency / 2.
+            family: root.family
+
+<ActivityStatsEntry>:
+    height: dp(70)
+    size_hint_y: None
+    size_hint_x: 1
+    efficiency_bar: efficiency_bar.__self__
+    BoxLayout:
+        size_hint_x: .4
+        orientation: 'vertical'
+        Image:
+            size_hint_y: .6
+            source: root.icon
+        Label:
+            size_hint_y: .4
+            text: root.title.upper()
+            text_size: self.size
+            halign: 'center'
+            valign: 'middle'
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'top'
+        EfficiencyBar:
+            size_hint: .9, .6
+            id: efficiency_bar
+            percentage: root.efficiency / 2.
+            family: root.family
